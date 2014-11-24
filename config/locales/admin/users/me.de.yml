@@ -4,7 +4,7 @@ de:
       users:
         me:
           change_password_hint: "Freilassen um bisheriges Passwort beizubehalten."
-          delete_account_hint: "Sie möchten die Anwendung nicht mehr nutzen?"
+          delete_account_hint: "Du möchtest die Anwendung nicht mehr nutzen?"
           delete_account: "Benutzerkonto löschen"
-          updated: "Ihr Profil wurde aktualisiert."
-          deleted: "Ihr Benutzerkonto wurde gelöscht."
+          updated: "Dein Profil wurde aktualisiert."
+          deleted: "Dein Benutzerkonto wurde gelöscht."
