@@ -786,6 +786,32 @@ de:
     user_mailer:
       invitation:
         subject: Ihre Pageflow Einladung
+    devise:
+      mailer:
+        confirmation_instructions:
+        reset_password_instructions:
+          salutation: "Hallo %{first_name}"
+          instruction: "für dein persönliches Pageflow-Benutzerkonto wurde ein Link zur Passwortänderung angefordert. Du kannst diese Aktion durchführen, indem du folgenden Link anklickst."
+          ignore_hint: "Falls Du diese Anfrage zur Passwortänderung gar nicht selbst gestartet hast, ignorier diese Mail einfach. Dein Passwort wird nicht geändert, bevor du den oben stehenden Link nicht bestätigt hast und im Anschluss ein neues Passwort anlegst."
+    pages:
+      page:
+        templates:
+          audio:
+            hint: "Audio"
+          background_video:
+            hint: "Video Loop"
+          video:
+            hint: "Video"
+        goto_top: "zum Anfang"
+        video_tag:
+          view_video: "Video ansehen"
+    user_mailer:
+      invitation:
+        salutation: "Hallo %{first_name}"
+        instruction: "Willkommen bei Pageflow. Bitte lege über den folgenden Link ein Kennwort fest. In Zukunft kannst Du Dich dann mit Deiner E-Mail-Adresse anmelden."
+        ending: "Dankeschön und viel Spaß,"
+        greeting: "Dein Pageflow-Team"
+
   quotas:
     exhausted: Quota verbraucht.
   support:
