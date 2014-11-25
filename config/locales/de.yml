@@ -726,6 +726,25 @@ de:
       errors:
         UnmatchedUploadError: Der Dateityp wird nicht unterstützt.
         unknown: Ein unbekannter Fehler ist aufgetreten.
+      templates:
+        embedded:
+          page_link:
+            reset: Zurücksetzen
+        back_button_decorator:
+          outline: Gliederung
+        chapter_item:
+          new_page: Neue Seite
+          save_error: "Beim Speichern des Kapitels ist ein Fehler aufgetreten."
+        confirm_encoding:
+          all_released: "Alle Dateien wurden zur Transcodierung freigegeben."
+          link_to_progress: "Auf der %{link} Seite wird der Fortschritt der Verarbeitung angezeigt."
+          manage_files: "Dateien verwalten"
+          videos_tab: "Videos"
+          audios_tab: "Audios"
+          confirm_button: "Ausgewählte Dateien transcodieren"
+        confirmable_file_item:
+          remove: "Löschen"
+
     entries:
       navigation:
         bar_top:
@@ -811,6 +830,10 @@ de:
         instruction: "Willkommen bei Pageflow. Bitte lege über den folgenden Link ein Kennwort fest. In Zukunft kannst Du Dich dann mit Deiner E-Mail-Adresse anmelden."
         ending: "Dankeschön und viel Spaß,"
         greeting: "Dein Pageflow-Team"
+    helpers:
+      entries:
+        image_rights: "Bildrechte"
+        global_links: "Globale Links"
 
   quotas:
     exhausted: Quota verbraucht.
