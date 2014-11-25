@@ -828,6 +828,15 @@ de:
           published_url_hint: "Er kann nun unter folgender URL erreicht werden:"
         select_button:
           select: "Ausw&auml;hlen"
+      views:
+        editor_views:
+          files_pending_warning: "Es werden noch Dateien hochgeladen. Wenn Sie die Seite verlassen werden die Uploads abgebrochen."
+          show_editor: "Editorleiste einblenden"
+          hide_editor: "Editorleiste ausblenden"
+          resize_editor: "Größe der Editorleiste ändern"
+        entry_preview_view:
+          scroll_hint: "Scrollen, um weiterzulesen"
+
     entries:
       navigation:
         bar_top:
