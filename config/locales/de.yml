@@ -744,6 +744,30 @@ de:
           confirm_button: "Ausgewählte Dateien transcodieren"
         confirmable_file_item:
           remove: "Löschen"
+        edit_chapter:
+          outline: "Gliederung"
+          destroy: "Löschen"
+          save_error: "Beim Speichern des Kapitels ist ein Problem aufgetreten."
+          retry: "Erneut versuchen"
+        edit_entry:
+          close: "Schließen"
+          publish: "Veröffentlichen..."
+          metadata: "Titel und Optionen"
+          save_error: "Beim Speichern der Metadaten ist ein Fehler aufgetreten."
+          manage_files: "Dateien verwalten"
+          outline: "Gliederung"
+          new_chapter: "Neues Kapitel"
+        edit_meta_data:
+          outline: "Gliederung"
+          save_error: "Beim Speichern der Metadaten ist ein Problem aufgetreten."
+          retry: "Erneut versuchen"
+        edit_page:
+          outline: "Gliederung"
+          destroy: "Löschen"
+          save_error: "Beim Speichern der Seite ist ein Problem aufgetreten."
+          retry: "Erneut versuchen"
+
+
 
     entries:
       navigation:
