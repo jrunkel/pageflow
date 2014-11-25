@@ -766,9 +766,68 @@ de:
           destroy: "Löschen"
           save_error: "Beim Speichern der Seite ist ein Problem aufgetreten."
           retry: "Erneut versuchen"
-
-
-
+        file_item:
+          select: "Auswählen"
+          confirm: "Überprüfen und bestätigen"
+          retry: "Erneut versuchen"
+          destroy: "Löschen"
+          cancel: "Abbrechen"
+          credits: "Rechte"
+          source: "Original"
+          download: "Herunterladen"
+        files:
+          back: "Zurück"
+        files_blank_slate:
+          no_files: "Es wurden noch keine Dateien dieses Typs hochgeladen."
+        files_explorer:
+          reuse_files: "Dateien wiederverwenden"
+          ok: "Ok"
+          cancel: "Abbrechen"
+        files_explorer_blank_slate:
+          choose_hint: "Bitte w&auml;hlen Sie einen Beitrag aus."
+        files_gallery_blank_slate:
+          no_files: "In diesem Beitrag gibt es keine Dateien dieses Typs."
+        help_button:
+          open_help: "Hilfe anzeigen"
+        image_positioning:
+          adjust_positioning: "Bildauschnitt anpassen"
+          aspect_ratio: "Seitenverhältnis"
+          save: "Speichern"
+          cancel: "Abbrechen"
+        loading:
+          loading: "Daten werden geladen."
+        locked:
+          loading: "Der Beitrag wird zur Bearbeitung geöffnet. Bitte warten..."
+          close: "Editor schließen"
+          open_here: "Stattdessen hier öffnen"
+        notification:
+          upload_pending: "Dateien werden gerade hochgeladen."
+          save_error: "Datensätze konnten nicht gespeichert werden."
+          retry: "Erneut versuchen"
+          saving: "Änderungen werden gespeichert..."
+          saved: "Alle Änderungen wurden gespeichert."
+          approve_files: "%{num_files} Dateien müssen für die Transcodierung freigeben werden."
+          show: "Anzeigen"
+        other_entries_blank_slate:
+          none_available: "Keine anderen Beiträge verfügbar"
+        page_item:
+          save_error: "Beim Speichern der Seite ist ein Fehler aufgetreten."
+        publish_entry:
+          files_pending_notice: "Bitte warten Sie bis alle Dateien des Beitrags verarbeitet wurden und überprüfen Sie das Ergebnis. Der Beitrag kann dann veröffentlicht werden."
+          show_files: "Dateien anzeigen"
+          published_notice: "Eine Revision dieses Beitrags ist zur Zeit veröffentlicht."
+          view_revisions: "Revisionen ansehen"
+          not_published_notice: "Dieser Beitrag ist zur Zeit nicht veröffentlicht."
+          publish_current: "Akuellen Stand veröffentlichen"
+          unlimited: "Unbegrenzt"
+          until_including: "Bis einschließlich"
+          date: "Datum"
+          time: "Uhrzeit"
+          publish: "Veröffentlichen"
+          publish_success: "Der Beitrag wurde erfolgreich veröffentlicht."
+          published_url_hint: "Er kann nun unter folgender URL erreicht werden:"
+        select_button:
+          select: "Ausw&auml;hlen"
     entries:
       navigation:
         bar_top:
@@ -837,15 +896,15 @@ de:
           instruction: "für dein persönliches Pageflow-Benutzerkonto wurde ein Link zur Passwortänderung angefordert. Du kannst diese Aktion durchführen, indem du folgenden Link anklickst."
           ignore_hint: "Falls Du diese Anfrage zur Passwortänderung gar nicht selbst gestartet hast, ignorier diese Mail einfach. Dein Passwort wird nicht geändert, bevor du den oben stehenden Link nicht bestätigt hast und im Anschluss ein neues Passwort anlegst."
     pages:
-      page:
-        templates:
-          audio:
-            hint: "Audio"
-          background_video:
-            hint: "Video Loop"
-          video:
-            hint: "Video"
-        goto_top: "zum Anfang"
+      templates:
+        audio:
+          hint: "Audio"
+        background_video:
+          hint: "Video Loop"
+        video:
+          hint: "Video"
+        page:
+          goto_top: "zum Anfang"
         video_tag:
           view_video: "Video ansehen"
     user_mailer:
