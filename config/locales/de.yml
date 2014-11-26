@@ -716,7 +716,8 @@ de:
         delimiter: 
     precision:
       format:
-        delimiter: 
+        delimiter:
+
   pageflow:
     invalid_transition: "Der gewünschte Status Wechsel ist nicht erlaubt."
     unauthorized: "Sie sind nicht berechtigt diese Seite anzuzeigen."
@@ -836,6 +837,36 @@ de:
           resize_editor: "Größe der Editorleiste ändern"
         entry_preview_view:
           scroll_hint: "Scrollen, um weiterzulesen"
+    ui:
+      templates:
+        inputs:
+          file_input:
+            adjust_positioning: "Bildausschnitt anpassen"
+            reset: "Zurücksetzen"
+            edit: "Ändern"
+          page_reference:
+            drag_hint: "Ziehen Sie Seiten per Drag &amp; Drop in die Seite um Verweise zu erstellen."
+          text_area_input:
+            bold: "Fett"
+            italic: "Kursiv"
+            underline: "Unterstrichen"
+            create_link: "Link einfügen"
+            url: "URL"
+            ok: "Ok"
+            cancel: "Abbrechen"
+      views:
+        inputs:
+          file_input_view:
+            none: "( kein )"
+          proxy_url_input_view:
+            url_validation: "Prüfe Erreichbarkeit der URL..."
+            http_error: "Die URL konnte nicht erfolgreich abgerufen werden (Der Server antwortete mit HTTP Status Code ' %{status}')"
+          text_input_view:
+            required_field: "Muss ausgefüllt werden"
+          url_input_view:
+            required_field: "Muss ausgefüllt werden"
+            url_hint: "URL muss mit http:// beginnen."
+            supported_vendors: "Es werden nur die folgenden Anbieter unterstützt:"
 
     entries:
       navigation:
