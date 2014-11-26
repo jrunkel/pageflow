@@ -274,91 +274,6 @@ de:
         transition:
           fade: Überblenden
           scroll: Scrollen
-  admin:
-    accounts:
-      no_entries: Keine Beiträge
-      no_members: Keine Benutzer
-    entries:
-      add_folder: Ordner hinzufügen
-      confirm_depublish: Soll der Beitrag wirklich depubliziert werden?
-      confirm_restore: Soll der Beitrag wirklich auf den Stand dieser Revision zurückgesetzt werden? Vor dem Zurücksetzen wird eine automatische Sicherung des aktuellen Standes erstellt.
-      depublish: Beitrag depublizieren
-      edit: Bearbeiten
-      edit_config: Konfiguration ändern
-      edit_revision: Ändern
-      editor: Editor
-      entries: Beiträge
-      forever: (unbegrenzt)
-      members: Redakteure
-      no_members: Es sind keine Redakteure zugeordnet.
-      no_revisions: Bisher keine Revisionen
-      not_published: Nicht veröffentlicht
-      preview: Vorschau
-      published_forever: Veröffentlicht
-      published_revision_legend: Aktuell Veröffentlichter Stand
-      published_until: Veröffentlicht bis %{published_until}
-      remove: Entfernen
-      remove_logo: Logo löschen
-      restore: Wiederherstellen
-      revision_created_with:
-        auto: Auto-Sicherung
-        publish: Veröffentlichung
-        restore: Auto-Sicherung
-        user: Sicherung
-      revision_created_with_hint:
-        auto: Dieser Stand wurde automatisch gesichert
-        publish: Dieser Stand des Beitrags wurde veröffentlicht
-        restore: Dieser Stand wurde gesichert bevor eine älteren Revision des Beitrags wiederhergestellt wurde
-        user: Dieser Stand wurde durch einen Benutzer gesichert
-      show: Anzeigen
-      show_public: Öffentlich
-      snapshot: Aktuellen Stand sichern
-      title_hint: Dieses Feld bestimmt die URL, unter der der Beitrag öffentlich erreichbar ist.
-    folders:
-      all: Alle
-      confirm_destroy: Ordner wirklick löschen? Beiträge bleiben erhalten.
-      destroy: Löschen
-      edit: Bearbeiten
-    revisions:
-      published_until_hint: Freilassen, um Beitrag ungebrenzt zu veröffentlichen.
-    themings:
-      cname_hint: Verwendet für Social Network Sharing.
-      name: ! '%{account_name}'
-      remove_logo: Logo entfernen
-      show: Anzeigen
-    users:
-      add: Benutzer hinzufügen
-      add_entry: Eintrag hinzufügen
-      confirm_delete: Soll der Benutzer wirklich gelöscht werden. Alle persönlichen Daten des Benutzers gehen verloren. Dieser Vorgang kann nicht rückgangig gemacht werden.
-      delete: Löschen
-      delete_me:
-        cancel_label: Nein, mein Benutzerkonto nicht löschen
-        delete_label: Benutzerkonto löschen
-        warning_html: Geben Sie Ihr aktuelles Passwort ein, um zu bestätigen, dass Ihr Benutzerkonto wirklich löschen möchten. <b>Alle Ihre Daten gehen dabei verloren. Der Vorgang kann nicht rückgangig gemacht werden.</b>
-      deleted: Der Benutzer wurde gelöscht.
-      edit: Bearbeiten
-      email_invitation_hint: Dem Benutzer wird eine E-Mail mit Anweisungen zum Festelegen eines Passworts gesendet.
-      empty: Keine Beiträge assoziiert. Fügen Sie dem ausgewählten Benutzer Beiträge hinzu.
-      invite_user: Benutzer einladen
-      me:
-        change_password_hint: Freilassen um bisheriges Passwort beizubehalten.
-        delete_account: Benutzerkonto löschen
-        delete_account_hint: Sie möchten die Anwendung nicht mehr nutzen?
-        deleted: Ihr Benutzerkonto wurde gelöscht.
-        updated: Ihr Profil wurde aktualisiert.
-      none: Sie haben keine Beiträge.
-      resend_invitation: Einladung erneut verschicken
-      resent_invitation: Der Benutzer wurde erneut per E-Mail eingeladen.
-      role_hint:
-        admin: Konto Administratoren können Benutzer und Beiträge des eigenen Kontos verwalten. System Admisitratoren haben Vollzugriff auf alle Konten.
-      roles:
-        account_manager: Konto Administrator
-        admin: System Administrator
-        editor: Redakteur
-      suspend: Sperren
-      suspended: Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden.
-      unsuspend: Entsperren
-      unsuspended: Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden.
   date:
     abbr_day_names:
     - So
@@ -524,92 +439,6 @@ de:
       send_instructions: Du erhältst in Kürze eine E-Mail mit der Anleitung, wie du deinen Account entsperren kannst.
       send_paranoid_instructions: Falls deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in wenigen Minuten eine E-Mail mit der Anleitung, wie du deinen Account entsperren kannst.
       unlocked: Dein Account wurde entsperrt. Du bist jetzt angemeldet.
-  edit_locks:
-    break_action:
-      aquire: Stattdessen hier bearbeiten
-    errors:
-      held_by_other_session_error:
-        aquire_html: <p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet.</p>
-        other_html: <p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>
-      held_by_other_user_error:
-        aquire_html: <p>Dieser Beitrag wird im Moment von <strong>%{user_name}</strong> bearbeitet. Klicken Sie auf 'Stattdessen hier bearbeiten', um die Bearbeitung durch den anderen Benutzers abzubrechen.</p>
-        other_html: <p><strong>%{user_name}</strong> hat ihre Bearbeitung abgebrochen. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den aktuellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen des anderen Benutzers verloren.</p>
-      not_held_error:
-        other_html: <p>Die Bearbeitung des Beitrags wurde außerhalb dieses Editor beendet. Laden Sie die Seite neu, um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>
-    required: Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade in einem Editor geöffnet ist.
-    required_but_held_by_other_user: Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade von einem anderen Benutzer bearbeitet wird.
-  editor:
-    blank_entry:
-      create_chapter: Klicke jetzt auf <em>Neues Kapitel</em>, um ein erstes Kapitel zu erstellen.
-      create_page: Klicke dann auf <em>Neue Seite</em>, um dem Kapitel eine erste Seite hinzuzufügen.
-      edit_page: Klicke auf eine Seite, um ihren Inhalt zu bearbeiten.
-      header: Dies ist ein leerer Pageflow
-      intro: Pageflows bestehen aus Kapiteln und Seiten. In der Seitenleiste rechts findest Du die Gliederung.
-      outro: Hier siehst Du dann eine Vorschau deines Pageflows.
-    configuration_editor:
-      tabs:
-        files: Dateien
-        general: Allgemein
-        links: Verweise
-        options: Optionen
-        widgets: Erscheinungsbild
-    files:
-      stages:
-        encoding:
-          action_required: Bestätigung erforderlich.
-          active: Encoding läuft.
-          failed: Fehler beim Encoding.
-          finished: Erfolgreich encodiert.
-          pending: Noch nicht encodiert.
-        fetching_meta_data:
-          active: Metadaten werden abgerufen.
-          failed: Fehler beim Abrufen der Metadaten.
-          finished: Metadaten erfolgreich abgerufen.
-          pending: Metadaten noch nicht abgerufen.
-        processing:
-          active: Verarbeitung läuft.
-          failed: Fehler beim Verarbeiten.
-          finished: Erfolgreich verarbeitet.
-          pending: Noch nicht verarbeitet.
-        uploading:
-          active: Wird hochgeladen.
-          failed: Fehler beim hochladen.
-          finished: Erfolgreich hochgeladen.
-          pending: Noch nicht hochgeladen.
-        uploading_to_s3:
-          active: Wird zu S3 übertragen.
-          failed: Fehler beim übertragen zu S3.
-          finished: Erfolgreich zu S3 übertragen.
-          pending: Noch nicht zu S3 übertragen.
-      tabs:
-        audio_files: Audios
-        image_files: Bilder
-        video_files: Videos
-    inline_help:
-      pageflow/chapter:
-        title: Wird auf der Übersichtsseite angezeigt.
-      pageflow/entry:
-        credits: Text wird zusammen mit dem Impressumsverweis angezeigt.
-        home_button_enabled: Link zu einer Übersichtsseite anzeigen.
-        home_button_enabled_disabled: Diese Funktion steht in diesem Theme nicht zur Verfügung.
-        home_url: URL der Übersichtseite. Leer lassen, um Standard zu übernehmen.
-        home_url_disabled: Diese Funktion steht in diesem Theme nicht zur Verfügung.
-        manual_start: Besucher muss den Start des Beitrags durch einen Klick bestätigen.
-        summary: Zusammenfassung die an Soziale Netzwerke weitergeben wird.
-        title: Vom Browser angezeigter Titel der Seite.
-      pageflow/page:
-        additional_title: Die Infobox wird über den Steuerelementen zum Starten und Stoppen der Wiedegabe angezeigt.
-        description: Dieser Text wird auf der Übersichtseite angezeigt, wenn Sie den Mauszeiger über dem Vorschaubild einer Seite platzieren.
-        gradient_opacity: Wählen Sie die Intensität des Farbverlaufs so, dass ein ausreichender Kontrast zwischen Text und Hintegrund gewährleistet ist.
-        invert: Dunkle Schrift und helle Schattierung anzeigen.
-        mobile_poster_image_id: Dieses Bild wird in der Mobilvariante der Seite als Posterbild gezeigt.
-        text: ! 'Empfohlene Textlänge: 220 Zeichen'
-        thumbnail_image_id: Dieses Bild wird in der Navigationsleiste und anderen Verweisen auf die Seite gezeigt.
-    quotas:
-      loading: Bitte warten...
-    screens:
-      ratio16to9: '16:9'
-      ratio4to3: '4:3'
   errors:
     format: ! '%{attribute} %{message}'
     messages:
@@ -665,7 +494,6 @@ de:
       create: ! '%{model} erstellen'
       submit: ! '%{model} speichern'
       update: ! '%{model} aktualisieren'
-  invalid_transition: Der gewünschte Status Wechsel ist nicht erlaubt.
   number:
     currency:
       format:
@@ -717,13 +545,161 @@ de:
     precision:
       format:
         delimiter:
-
   pageflow:
+    admin:
+      resource_tabs:
+        members: "Mitglieder"
+        revisions: "Revisionen"
+        entries: "Beiträge"
+        users: "Benutzer"
+      accounts:
+        no_entries: Keine Beiträge
+        no_members: Keine Benutzer
+      entries:
+        add_folder: Ordner hinzufügen
+        confirm_depublish: Soll der Beitrag wirklich depubliziert werden?
+        confirm_restore: Soll der Beitrag wirklich auf den Stand dieser Revision zurückgesetzt werden? Vor dem Zurücksetzen wird eine automatische Sicherung des aktuellen Standes erstellt.
+        depublish: Beitrag depublizieren
+        edit: Bearbeiten
+        edit_config: Konfiguration ändern
+        edit_revision: Ändern
+        editor: Editor
+        entries: Beiträge
+        forever: (unbegrenzt)
+        members: Redakteure
+        no_members: Es sind keine Redakteure zugeordnet.
+        no_revisions: Bisher keine Revisionen
+        not_published: Nicht veröffentlicht
+        preview: Vorschau
+        published_forever: Veröffentlicht
+        published_revision_legend: Aktuell Veröffentlichter Stand
+        published_until: Veröffentlicht bis %{published_until}
+        remove: Entfernen
+        remove_logo: Logo löschen
+        restore: Wiederherstellen
+        revision_created_with:
+          auto: Auto-Sicherung
+          publish: Veröffentlichung
+          restore: Auto-Sicherung
+          user: Sicherung
+        revision_created_with_hint:
+          auto: Dieser Stand wurde automatisch gesichert
+          publish: Dieser Stand des Beitrags wurde veröffentlicht
+          restore: Dieser Stand wurde gesichert bevor eine älteren Revision des Beitrags wiederhergestellt wurde
+          user: Dieser Stand wurde durch einen Benutzer gesichert
+        show: Anzeigen
+        show_public: Öffentlich
+        snapshot: Aktuellen Stand sichern
+        title_hint: Dieses Feld bestimmt die URL, unter der der Beitrag öffentlich erreichbar ist.
+      folders:
+        all: Alle
+        confirm_destroy: Ordner wirklick löschen? Beiträge bleiben erhalten.
+        destroy: Löschen
+        edit: Bearbeiten
+      revisions:
+        published_until_hint: Freilassen, um Beitrag unbegrenzt zu veröffentlichen.
+      themings:
+        cname_hint: Verwendet für Social Network Sharing.
+        name: "%{account_name}"
+        remove_logo: Logo entfernen
+        show: Anzeigen
+      users:
+        invite_user: "Benutzer einladen"
+        edit: "Bearbeiten"
+        email_invitation_hint: "Dem Benutzer wird eine E-Mail mit Anweisungen zum Festelegen eines Passworts gesendet."
+        resend_invitation: "Einladung erneut verschicken"
+        resent_invitation: "Der Benutzer wurde erneut per E-Mail eingeladen."
+        suspend: "Sperren"
+        suspended: "Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden."
+        unsuspend: "Entsperren"
+        unsuspended: "Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden."
+        delete: "Löschen"
+        confirm_delete: "Soll der Benutzer wirklich gelöscht werden. Alle persönlichen Daten des Benutzers gehen verloren. Dieser Vorgang kann nicht rückgangig gemacht werden."
+        deleted: "Der Benutzer wurde gelöscht."
+        role_hint:
+          admin: "Konto Administratoren können Benutzer und Beiträge des eigenen Kontos verwalten. System Admisitratoren haben Vollzugriff auf alle Konten."
+          other: "Konto Administratoren können Benutzer und Beiträge verwalten."
+        add_entry: "Eintrag hinzufügen"
+        add: "Benutzer hinzufügen"
+        empty: "Keine Beiträge assoziiert. Fügen Sie dem ausgewählten Benutzer Beiträge hinzu."
+        none: "Sie haben keine Beiträge."
+        roles:
+          editor: "Redakteur"
+          account_manager: "Konto Administrator"
+          admin: "System Administrator"
+    quotas:
+      exhausted: Quota verbraucht.
+    edit_locks:
+      required: "Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade in einem Editor geöffnet ist."
+      required_but_held_by_other_user: "Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade von einem anderen Benutzer bearbeitet wird."
+      break_action:
+        aquire: "Stattdessen hier bearbeiten"
+        other: "Hier weiterarbeiten"
+      errors:
+        held_by_other_user_error:
+          aquire_html: "<p>Dieser Beitrag wird im Moment von <strong>%{user_name}</strong> bearbeitet. Klicken Sie auf 'Stattdessen hier bearbeiten', um die Bearbeitung durch den anderen Benutzers abzubrechen.</p>"
+          other_html: "<p><strong>%{user_name}</strong> hat ihre Bearbeitung abgebrochen. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den aktuellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen des anderen Benutzers verloren.</p>"
+        held_by_other_session_error:
+          aquire_html:  "<p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet.</p>"
+          other_html:  "<p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>"
+        not_held_error:
+          other_html: "<p>Die Bearbeitung des Beitrags wurde außerhalb dieses Editor beendet. Laden Sie die Seite neu, um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>"
+    widgets:
+      none: '(Kein)'
+      roles:
+        navigation: "Navigationsleiste"
+        mobile_navigation: "Mobile Navigation"
+        analytics: "Zählpixel"
+      type_names:
+        default_navigation: "Navigationsleiste mit Thumbnails"
+        default_mobile_navigation: "Navigationsmenü mit Thumbnails"
     invalid_transition: "Der gewünschte Status Wechsel ist nicht erlaubt."
     unauthorized: "Sie sind nicht berechtigt diese Seite anzuzeigen."
     audio:
       open: Audio anhören
     editor:
+      screens:
+        ratio16to9: "16:9"
+        ratio4to3: "4:3"
+      files:
+        tabs:
+          image_files: "Bilder"
+          video_files: "Videos"
+          audio_files: "Audios"
+        stages:
+          uploading:
+            pending: "Noch nicht hochgeladen."
+            active: "Wird hochgeladen."
+            finished: "Erfolgreich hochgeladen."
+            failed: "Fehler beim hochladen."
+          uploading_to_s3:
+            pending: "Noch nicht zu S3 übertragen."
+            active: "Wird zu S3 übertragen."
+            finished: "Erfolgreich zu S3 übertragen."
+            failed: "Fehler beim übertragen zu S3."
+          fetching_meta_data:
+            pending: "Metadaten noch nicht abgerufen."
+            active: "Metadaten werden abgerufen."
+            finished: "Metadaten erfolgreich abgerufen."
+            failed: "Fehler beim Abrufen der Metadaten."
+          encoding:
+            pending: "Noch nicht encodiert."
+            action_required: "Bestätigung erforderlich."
+            active: "Encoding läuft."
+            finished: "Erfolgreich encodiert."
+            failed: "Fehler beim Encoding."
+          processing:
+            pending: "Noch nicht verarbeitet."
+            active: "Verarbeitung läuft."
+            finished: "Erfolgreich verarbeitet."
+            failed: "Fehler beim Verarbeiten."
+      blank_entry:
+        create_chapter: Klicke jetzt auf <em>Neues Kapitel</em>, um ein erstes Kapitel zu erstellen.
+        create_page: Klicke dann auf <em>Neue Seite</em>, um dem Kapitel eine erste Seite hinzuzufügen.
+        edit_page: Klicke auf eine Seite, um ihren Inhalt zu bearbeiten.
+        header: Dies ist ein leerer Pageflow
+        intro: Pageflows bestehen aus Kapiteln und Seiten. In der Seitenleiste rechts findest Du die Gliederung.
+        outro: Hier siehst Du dann eine Vorschau deines Pageflows.
       errors:
         UnmatchedUploadError: Der Dateityp wird nicht unterstützt.
         unknown: Ein unbekannter Fehler ist aufgetreten.
@@ -838,6 +814,33 @@ de:
         entry_preview_view:
           scroll_hint: "Scrollen, um weiterzulesen"
     ui:
+      configuration_editor:
+        tabs:
+          general: "Allgemein"
+          files: "Dateien"
+          options: "Optionen"
+          links: "Verweise"
+          widgets: "Erscheinungsbild"
+      inline_help:
+        "pageflow/page":
+          invert: "Dunkle Schrift und helle Schattierung anzeigen."
+          gradient_opacity: "Wählen Sie die Intensität des Farbverlaufs so, dass ein ausreichender Kontrast zwischen Text und Hintegrund gewährleistet ist."
+          description: "Dieser Text wird auf der Übersichtseite angezeigt, wenn Sie den Mauszeiger über dem Vorschaubild einer Seite platzieren."
+          additional_title: "Die Infobox wird über den Steuerelementen zum Starten und Stoppen der Wiedegabe angezeigt."
+          text: "Empfohlene Textlänge: 220 Zeichen"
+          thumbnail_image_id: "Dieses Bild wird in der Navigationsleiste und anderen Verweisen auf die Seite gezeigt."
+          mobile_poster_image_id: "Dieses Bild wird in der Mobilvariante der Seite als Posterbild gezeigt."
+        "pageflow/entry":
+          title: "Vom Browser angezeigter Titel der Seite."
+          summary: "Zusammenfassung die an Soziale Netzwerke weitergeben wird."
+          credits: "Text wird zusammen mit dem Impressumsverweis angezeigt."
+          manual_start: "Besucher muss den Start des Beitrags durch einen Klick bestätigen."
+          home_button_enabled: "Link zu einer Übersichtsseite anzeigen."
+          home_button_enabled_disabled: "Diese Funktion steht in diesem Theme nicht zur Verfügung."
+          home_url: "URL der Übersichtseite. Leer lassen, um Standard zu übernehmen."
+          home_url_disabled: "Diese Funktion steht in diesem Theme nicht zur Verfügung."
+        "pageflow/chapter":
+          title: "Wird auf der Übersichtsseite angezeigt."
       templates:
         inputs:
           file_input:
@@ -857,7 +860,7 @@ de:
       views:
         inputs:
           file_input_view:
-            none: "( kein )"
+            none: "(Kein)"
           proxy_url_input_view:
             url_validation: "Prüfe Erreichbarkeit der URL..."
             http_error: "Die URL konnte nicht erfolgreich abgerufen werden (Der Server antwortete mit HTTP Status Code ' %{status}')"
@@ -867,7 +870,9 @@ de:
             required_field: "Muss ausgefüllt werden"
             url_hint: "URL muss mit http:// beginnen."
             supported_vendors: "Es werden nur die folgenden Anbieter unterstützt:"
-
+          select_input_view:
+            placeholder: "Standard (%{text})"
+            none: "(Kein)"
     entries:
       navigation:
         bar_top:
@@ -957,9 +962,6 @@ de:
       entries:
         image_rights: "Bildrechte"
         global_links: "Globale Links"
-
-  quotas:
-    exhausted: Quota verbraucht.
   support:
     array:
       last_word_connector: ! ' und '
@@ -973,7 +975,6 @@ de:
       long: ! '%d.%m.%Y, %H:%M'
       short: ! '%d. %B %Y, %H:%M Uhr'
     pm: nachmittags
-  unauthorized: Sie sind nicht berechtigt diese Seite anzuzeigen.
   views:
     pagination:
       first: ! '|<'
