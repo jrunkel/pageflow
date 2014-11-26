@@ -3,6 +3,18 @@ de:
     access_denied:
       message: Sie sind nicht berechtigt diese Seite anzuzeigen.
     any: Alle
+    batch_actions:
+      action_label: Ausgewählte %{title}
+      button_label: Massenoperationen
+      default_confirmation: Bist Du sicher?
+      delete_confirmation: Bist Du sicher, dass Du diese %{plural_model} löschen willst?
+      labels:
+        destroy: Löschen
+      link: Erstellen
+      selection_toggle_explanation: (Auswahl)
+      succesfully_destroyed:
+        one: 1 %{model} erfolgreich gelöscht
+        other: ! '%{count} %{plural_model} erfolgreich gelöscht'
     blank_slate:
       content: Es gibt noch keine %{resource_name}.
       link: Erstellen
@@ -11,11 +23,14 @@ de:
     comments:
       add: Kommentar hinzufügen
       author: Autor
+      author_missing: Anonym
+      author_type: Autor
       body: Inhalt
       errors:
         empty_text: Der Kommentar wurde nicht gespeichert, da der Text fehlt.
       no_comments_yet: Es gibt noch keine Kommentare.
       resource: Resource
+      resource_type: Ressource
       title: Kommentar
       title_content: Kommentare (%{count})
     create_model: ! '%{model} erstellen'
@@ -31,25 +46,65 @@ de:
       change_password:
         submit: Mein Passwort ändern
         title: Ändern Sie Ihr Passwort
+      email:
+        title: Email
       links:
         forgot_your_password: Passwort vergessen?
+        resend_confirmation_instructions: Bestätigungsmail erneut versenden
+        resend_unlock_instructions: Entsperrungsmail erneut versenden
         sign_in: Anmeldung
+        sign_in_with_omniauth_provider: Mit %{provider} anmelden
+        sign_up: Registrieren
       login:
-        remember_me: erinnere dich an mich
+        remember_me: Erinnere dich an mich
         submit: Login
         title: Login
+      password:
+        title: Passwort
+      resend_confirmation_instructions:
+        submit: Senden
+        title: Bestätigungsmail erneut versenden
       reset_password:
         submit: Mein Passwort zurücksetzen
         title: Passwort vergessen?
+      sign_up:
+        submit: Registrieren
+        title: Registrieren
+      subdomain:
+        title: Subdomain
+      unlock:
+        submit: Senden
+        title: Entsperrinformationen senden
+      username:
+        title: Benutzername
     download: ! 'Herunterladen:'
+    dropdown_actions:
+      button_label: Aktionen
     edit: Bearbeiten
     edit_model: ! '%{model} bearbeiten'
     empty: Leer
     equal_to: Gleich
     filter: Filtern
+    filters:
+      buttons:
+        clear: Filter zurücksetzen
+        filter: Filter
+      predicates:
+        contains: Enthält
+        ends_with: Endet mit
+        equals: Ist gleich
+        greater_than: Größer als
+        less_than: Kleiner als
+        starts_with: Beginnt mit
     greater_than: Größer als
     has_many_delete: Löschen
     has_many_new: ! '%{model} hinzufügen'
+    has_many_remove: Entfernen
+    index_list:
+      block: Liste
+      blog: Blog
+      grid: Grid
+      table: Tabelle
     less_than: Kleiner als
     logout: Abmelden
     main_content: Bitte implementieren Sie %{model}#main_content, um Inhalte anzuzeigen.
@@ -61,7 +116,9 @@ de:
         one: Eintrag
         other: Einträge
       multiple: Zeige %{model} <b>%{from}&nbsp;–&nbsp;%{to}</b> von <b>%{total}</b>
+      multiple_without_total: Zeige %{model} <b> %{from}&nbsp;-&nbsp;%{to}</b>
       one_page: Zeige <b>alle %{n}</b> %{model}
+    powered_by: ! ' '
     previous: Zurück
     scopes:
       frozen: Alle
@@ -71,7 +128,14 @@ de:
     sidebars:
       filters: Filter
       folders: Ordner
+    status_tag:
+      'no': Nein
+      'yes': Ja
     undelete: Wiederherstellen
+    unsupported_browser:
+      headline: Internet Explorer Version 9 und niedriger sind nicht unterstützt.
+      recommendation: Wir empfehlen ein Update des Browsers auf eine aktuelle Version von <a href="http://windows.microsoft.com/ie">Internet Explorer</a>, <a href="https://chrome.google.com/">Google Chrome</a>, oder <a href="https://mozilla.org/firefox/">Firefox</a>.
+      turn_off_compatibility_view: Internet Explorer Version 9 und niedriger sind nicht unterstützt.
     view: Anzeigen
   activerecord:
     attributes:
@@ -193,25 +257,41 @@ de:
         blank: muss ausgefüllt werden
         confirmation: stimmt nicht mit der Bestätigung überein
         empty: muss ausgefüllt werden
-        equal_to: muss genau %{count} sein
+        equal_to:
+          one: muss genau %{count} sein
+          other: muss genau %{count} sein
         even: muss gerade sein
         exclusion: ist nicht verfügbar
-        greater_than: muss größer als %{count} sein
-        greater_than_or_equal_to: muss größer oder gleich %{count} sein
+        greater_than:
+          one: muss größer als %{count} sein
+          other: muss größer als %{count} sein
+        greater_than_or_equal_to:
+          one: muss größer oder gleich %{count} sein
+          other: muss größer oder gleich %{count} sein
         inclusion: ist kein gültiger Wert
         invalid: ist nicht gültig
         invalid_date: ist kein gültiges Datum
-        less_than: muss kleiner als %{count} sein
-        less_than_or_equal_to: muss kleiner oder gleich %{count} sein
+        less_than:
+          one: muss kleiner als %{count} sein
+          other: muss kleiner als %{count} sein
+        less_than_or_equal_to:
+          one: muss kleiner oder gleich %{count} sein
+          other: muss kleiner oder gleich %{count} sein
         not_a_number: ist keine Zahl
         not_an_integer: muss ganzzahlig sein
         odd: muss ungerade sein
         record_invalid: ! 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
         taken: ist bereits vergeben
-        too_long: ist zu lang (nicht mehr als %{count} Zeichen)
-        too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
+        too_long:
+          one: ist zu lang (nicht mehr als %{count} Zeichen)
+          other: ist zu lang (nicht mehr als %{count} Zeichen)
+        too_short:
+          one: ist zu kurz (nicht weniger als %{count} Zeichen)
+          other: ist zu kurz (nicht weniger als %{count} Zeichen)
         validation: muss mindestens 5 Zeichen lang sein und eine Ziffer beinhalten.
-        wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
+        wrong_length:
+          one: hat die falsche Länge (muss genau %{count} Zeichen haben)
+          other: hat die falsche Länge (muss genau %{count} Zeichen haben)
     models:
       account:
         one: Konto
@@ -390,7 +470,7 @@ de:
       unconfirmed: Du musst deinen Account bestätigen, bevor du eigenes Bildmaterial hochladen oder andere Bilder und Videos bewerten kannst.
     mailer:
       confirmation_instructions:
-        subject: 
+        subject: Bestätigung
       reset_password_instructions:
         subject: Anleitung um dein Passwort zurückzusetzen
       unlock_instructions:
@@ -402,7 +482,7 @@ de:
       failure: Du kannst nicht mit deinem %{kind}-Account angemeldet werden, weil "%{reason}".
       success: Du hast dich erfolgreich mit deinem %{kind}-Account angemeldet.
     passwords:
-      no_token: 
+      no_token: Du musst diese Seite von einem Link aus der "Passwort zurücksetzen" E-Mail aufrufen. Achte dabei darauf, dass der Link die vollständige URL enthält.
       send_instructions: Du erhältst in Kürze eine E-Mail mit der Anleitung, wie das Passwort zurückgesetzt werden kann.
       send_paranoid_instructions: Wenn Deine E-Mail-Adresse in unserer Datenbank existiert, erhältst du in Kürze eine E-Mail mit der Anleitung, wie das Passwort zurückgesetzt werden kann.
       updated: Dein Passwort wurde geändert. Du bist jetzt angemeldet.
@@ -446,19 +526,29 @@ de:
       already_confirmed: wurde bereits bestätigt
       blank: muss ausgefüllt werden
       confirmation: stimmt nicht mit der Bestätigung überein
-      confirmation_period_expired: 
+      confirmation_period_expired: muss innherhalb von %{period} bestätigt werden, bitte einen neuen Link anfordern
       empty: muss ausgefüllt werden
-      equal_to: muss genau %{count} sein
+      equal_to:
+        one: muss genau %{count} sein
+        other: muss genau %{count} sein
       even: muss gerade sein
       exclusion: ist nicht verfügbar
       expired: ist abgelaufen, bitte neu anfordern
-      greater_than: muss größer als %{count} sein
-      greater_than_or_equal_to: muss größer oder gleich %{count} sein
+      greater_than:
+        one: muss größer als %{count} sein
+        other: muss größer als %{count} sein
+      greater_than_or_equal_to:
+        one: muss größer oder gleich %{count} sein
+        other: muss größer oder gleich %{count} sein
       inclusion: ist kein gültiger Wert
       invalid: ist nicht gültig
       invalid_date: ist kein gültiges Datum
-      less_than: muss kleiner als %{count} sein
-      less_than_or_equal_to: muss kleiner oder gleich %{count} sein
+      less_than:
+        one: muss kleiner als %{count} sein
+        other: muss kleiner als %{count} sein
+      less_than_or_equal_to:
+        one: muss kleiner oder gleich %{count} sein
+        other: muss kleiner oder gleich %{count} sein
       not_a_number: ist keine Zahl
       not_an_integer: muss ganzzahlig sein
       not_found: nicht gefunden
@@ -467,12 +557,25 @@ de:
         one: Registrierung kann nicht abgeschlossen werden. Ein Fehler.
         other: Registrierung kann nicht abgeschlossen werden. %{count} Fehler.
       odd: muss ungerade sein
+      other_than:
+        one: muss ungleich %{count} sein
+        other: muss ungleich %{count} sein
+      present: muss leer sein
       readonly: ist schreibgeschützt
       record_invalid: ! 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+      restrict_dependent_destroy:
+        one: Der Datensatz kann nicht gelöscht werden, da  %{record} von ihm abhängt.
+        other: Der Datensatz kann nicht gelöscht werden, da %{record} von ihm abhängen.
       taken: ist bereits vergeben
-      too_long: ist zu lang (nicht mehr als %{count} Zeichen)
-      too_short: ist zu kurz (nicht weniger als %{count} Zeichen)
-      wrong_length: hat die falsche Länge (muss genau %{count} Zeichen haben)
+      too_long:
+        one: ist zu lang (nicht mehr als 1 Zeichen)
+        other: ist zu lang (nicht mehr als %{count} Zeichen)
+      too_short:
+        one: ist zu kurz (nicht weniger als 1 Zeichen)
+        other: ist zu kurz (nicht weniger als %{count} Zeichen)
+      wrong_length:
+        one: hat die falsche Länge (muss genau 1 Zeichen haben)
+        other: hat die falsche Länge (muss genau %{count} Zeichen haben)
     template:
       body: ! 'Bitte überprüfen Sie die folgenden Felder:'
       header:
@@ -523,7 +626,7 @@ de:
             other: Billiarden
           thousand: Tausend
           trillion: Billionen
-          unit: 
+          unit: Einheit
       format:
         delimiter: 
         precision: 1
@@ -542,16 +645,12 @@ de:
     percentage:
       format:
         delimiter: 
+        format: ! '%n%'
     precision:
       format:
-        delimiter:
+        delimiter: 
   pageflow:
     admin:
-      resource_tabs:
-        members: "Mitglieder"
-        revisions: "Revisionen"
-        entries: "Beiträge"
-        users: "Benutzer"
       accounts:
         no_entries: Keine Beiträge
         no_members: Keine Benutzer
@@ -596,103 +695,66 @@ de:
         confirm_destroy: Ordner wirklick löschen? Beiträge bleiben erhalten.
         destroy: Löschen
         edit: Bearbeiten
+      resource_tabs:
+        entries: Beiträge
+        members: Mitglieder
+        revisions: Revisionen
+        users: Benutzer
       revisions:
         published_until_hint: Freilassen, um Beitrag unbegrenzt zu veröffentlichen.
       themings:
         cname_hint: Verwendet für Social Network Sharing.
-        name: "%{account_name}"
+        name: ! '%{account_name}'
         remove_logo: Logo entfernen
         show: Anzeigen
       users:
-        invite_user: "Benutzer einladen"
-        edit: "Bearbeiten"
-        email_invitation_hint: "Dem Benutzer wird eine E-Mail mit Anweisungen zum Festelegen eines Passworts gesendet."
-        resend_invitation: "Einladung erneut verschicken"
-        resent_invitation: "Der Benutzer wurde erneut per E-Mail eingeladen."
-        suspend: "Sperren"
-        suspended: "Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden."
-        unsuspend: "Entsperren"
-        unsuspended: "Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden."
-        delete: "Löschen"
-        confirm_delete: "Soll der Benutzer wirklich gelöscht werden. Alle persönlichen Daten des Benutzers gehen verloren. Dieser Vorgang kann nicht rückgangig gemacht werden."
-        deleted: "Der Benutzer wurde gelöscht."
+        add: Benutzer hinzufügen
+        add_entry: Beitrag hinzufügen
+        confirm_delete: Soll der Benutzer wirklich gelöscht werden. Alle persönlichen Daten des Benutzers gehen verloren. Dieser Vorgang kann nicht rückgangig gemacht werden.
+        delete: Löschen
+        deleted: Der Benutzer wurde gelöscht.
+        edit: Bearbeiten
+        email_invitation_hint: Dem Benutzer wird eine E-Mail mit Anweisungen zum Festelegen eines Passworts gesendet.
+        empty: Keine Beiträge assoziiert. Fügen Sie dem ausgewählten Benutzer Beiträge hinzu.
+        invite_user: Benutzer einladen
+        none: Sie haben keine Beiträge.
+        resend_invitation: Einladung erneut verschicken
+        resent_invitation: Der Benutzer wurde erneut per E-Mail eingeladen.
         role_hint:
-          admin: "Konto Administratoren können Benutzer und Beiträge des eigenen Kontos verwalten. System Admisitratoren haben Vollzugriff auf alle Konten."
-          other: "Konto Administratoren können Benutzer und Beiträge verwalten."
-        add_entry: "Eintrag hinzufügen"
-        add: "Benutzer hinzufügen"
-        empty: "Keine Beiträge assoziiert. Fügen Sie dem ausgewählten Benutzer Beiträge hinzu."
-        none: "Sie haben keine Beiträge."
+          admin: Konto Administratoren können Benutzer und Beiträge des eigenen Kontos verwalten. System Admisitratoren haben Vollzugriff auf alle Konten.
+          others: Konto Administratoren können Benutzer und Beiträge verwalten.
         roles:
-          editor: "Redakteur"
-          account_manager: "Konto Administrator"
-          admin: "System Administrator"
-    quotas:
-      exhausted: Quota verbraucht.
-    edit_locks:
-      required: "Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade in einem Editor geöffnet ist."
-      required_but_held_by_other_user: "Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade von einem anderen Benutzer bearbeitet wird."
-      break_action:
-        aquire: "Stattdessen hier bearbeiten"
-        other: "Hier weiterarbeiten"
-      errors:
-        held_by_other_user_error:
-          aquire_html: "<p>Dieser Beitrag wird im Moment von <strong>%{user_name}</strong> bearbeitet. Klicken Sie auf 'Stattdessen hier bearbeiten', um die Bearbeitung durch den anderen Benutzers abzubrechen.</p>"
-          other_html: "<p><strong>%{user_name}</strong> hat ihre Bearbeitung abgebrochen. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den aktuellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen des anderen Benutzers verloren.</p>"
-        held_by_other_session_error:
-          aquire_html:  "<p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet.</p>"
-          other_html:  "<p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>"
-        not_held_error:
-          other_html: "<p>Die Bearbeitung des Beitrags wurde außerhalb dieses Editor beendet. Laden Sie die Seite neu, um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>"
-    widgets:
-      none: '(Kein)'
-      roles:
-        navigation: "Navigationsleiste"
-        mobile_navigation: "Mobile Navigation"
-        analytics: "Zählpixel"
-      type_names:
-        default_navigation: "Navigationsleiste mit Thumbnails"
-        default_mobile_navigation: "Navigationsmenü mit Thumbnails"
-    invalid_transition: "Der gewünschte Status Wechsel ist nicht erlaubt."
-    unauthorized: "Sie sind nicht berechtigt diese Seite anzuzeigen."
+          account_manager: Konto Administrator
+          admin: System Administrator
+          editor: Redakteur
+        suspend: Sperren
+        suspended: Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden.
+        unsuspend: Entsperren
+        unsuspended: Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden.
     audio:
       open: Audio anhören
+    devise:
+      mailer:
+        confirmation_instructions: 
+        reset_password_instructions:
+          ignore_hint: Falls Du diese Anfrage zur Passwortänderung gar nicht selbst gestartet hast, ignorier diese Mail einfach. Dein Passwort wird nicht geändert, bevor du den oben stehenden Link nicht bestätigt hast und im Anschluss ein neues Passwort anlegst.
+          instruction: für dein persönliches Pageflow-Benutzerkonto wurde ein Link zur Passwortänderung angefordert. Du kannst diese Aktion durchführen, indem du folgenden Link anklickst.
+          salutation: Hallo %{first_name}
+    edit_locks:
+      break_action:
+        aquire: Stattdessen hier bearbeiten
+      errors:
+        held_by_other_session_error:
+          aquire_html: <p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet.</p>
+          other_html: <p>Sie haben diesen Beitrag in einem anderen Fenster geöffnet. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>
+        held_by_other_user_error:
+          aquire_html: <p>Dieser Beitrag wird im Moment von <strong>%{user_name}</strong> bearbeitet. Klicken Sie auf 'Stattdessen hier bearbeiten', um die Bearbeitung durch den anderen Benutzers abzubrechen.</p>
+          other_html: <p><strong>%{user_name}</strong> hat ihre Bearbeitung abgebrochen. Laden Sie die Seite neu und klicken Sie auf 'Stattdessen hier bearbeiten', um den aktuellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen des anderen Benutzers verloren.</p>
+        not_held_error:
+          other_html: <p>Die Bearbeitung des Beitrags wurde außerhalb dieses Editor beendet. Laden Sie die Seite neu, um den akutellen Stand des Beitrags zu sehen.</p><p>Wenn Sie die Bearbeitung hier fortsetzen, gehen möglicherweise Änderungen verloren.</p>
+      required: Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade in einem Editor geöffnet ist.
+      required_but_held_by_other_user: Die Aktion kann nicht durchgeführt werden, da der Beitrag gerade von einem anderen Benutzer bearbeitet wird.
     editor:
-      screens:
-        ratio16to9: "16:9"
-        ratio4to3: "4:3"
-      files:
-        tabs:
-          image_files: "Bilder"
-          video_files: "Videos"
-          audio_files: "Audios"
-        stages:
-          uploading:
-            pending: "Noch nicht hochgeladen."
-            active: "Wird hochgeladen."
-            finished: "Erfolgreich hochgeladen."
-            failed: "Fehler beim hochladen."
-          uploading_to_s3:
-            pending: "Noch nicht zu S3 übertragen."
-            active: "Wird zu S3 übertragen."
-            finished: "Erfolgreich zu S3 übertragen."
-            failed: "Fehler beim übertragen zu S3."
-          fetching_meta_data:
-            pending: "Metadaten noch nicht abgerufen."
-            active: "Metadaten werden abgerufen."
-            finished: "Metadaten erfolgreich abgerufen."
-            failed: "Fehler beim Abrufen der Metadaten."
-          encoding:
-            pending: "Noch nicht encodiert."
-            action_required: "Bestätigung erforderlich."
-            active: "Encoding läuft."
-            finished: "Erfolgreich encodiert."
-            failed: "Fehler beim Encoding."
-          processing:
-            pending: "Noch nicht verarbeitet."
-            active: "Verarbeitung läuft."
-            finished: "Erfolgreich verarbeitet."
-            failed: "Fehler beim Verarbeiten."
       blank_entry:
         create_chapter: Klicke jetzt auf <em>Neues Kapitel</em>, um ein erstes Kapitel zu erstellen.
         create_page: Klicke dann auf <em>Neue Seite</em>, um dem Kapitel eine erste Seite hinzuzufügen.
@@ -703,178 +765,181 @@ de:
       errors:
         UnmatchedUploadError: Der Dateityp wird nicht unterstützt.
         unknown: Ein unbekannter Fehler ist aufgetreten.
+      files:
+        stages:
+          encoding:
+            action_required: Bestätigung erforderlich.
+            active: Encoding läuft.
+            failed: Fehler beim Encoding.
+            finished: Erfolgreich encodiert.
+            pending: Noch nicht encodiert.
+          fetching_meta_data:
+            active: Metadaten werden abgerufen.
+            failed: Fehler beim Abrufen der Metadaten.
+            finished: Metadaten erfolgreich abgerufen.
+            pending: Metadaten noch nicht abgerufen.
+          processing:
+            active: Verarbeitung läuft.
+            failed: Fehler beim Verarbeiten.
+            finished: Erfolgreich verarbeitet.
+            pending: Noch nicht verarbeitet.
+          uploading:
+            active: Wird hochgeladen.
+            failed: Fehler beim hochladen.
+            finished: Erfolgreich hochgeladen.
+            pending: Noch nicht hochgeladen.
+          uploading_to_s3:
+            active: Wird zu S3 übertragen.
+            failed: Fehler beim übertragen zu S3.
+            finished: Erfolgreich zu S3 übertragen.
+            pending: Noch nicht zu S3 übertragen.
+        tabs:
+          audio_files: Audios
+          image_files: Bilder
+          video_files: Videos
+      screens:
+        ratio16to9: '16:9'
+        ratio4to3: '4:3'
       templates:
-        embedded:
-          page_link:
-            reset: Zurücksetzen
         back_button_decorator:
           outline: Gliederung
         chapter_item:
           new_page: Neue Seite
-          save_error: "Beim Speichern des Kapitels ist ein Fehler aufgetreten."
+          save_error: Beim Speichern des Kapitels ist ein Fehler aufgetreten.
         confirm_encoding:
-          all_released: "Alle Dateien wurden zur Transcodierung freigegeben."
-          link_to_progress: "Auf der %{link} Seite wird der Fortschritt der Verarbeitung angezeigt."
-          manage_files: "Dateien verwalten"
-          videos_tab: "Videos"
-          audios_tab: "Audios"
-          confirm_button: "Ausgewählte Dateien transcodieren"
+          all_released: Alle Dateien wurden zur Transcodierung freigegeben.
+          audios_tab: Audios
+          confirm_button: Ausgewählte Dateien transcodieren
+          link_to_progress: Auf der %{link} Seite wird der Fortschritt der Verarbeitung angezeigt.
+          manage_files: Dateien verwalten
+          videos_tab: Videos
         confirmable_file_item:
-          remove: "Löschen"
+          remove: Löschen
         edit_chapter:
-          outline: "Gliederung"
-          destroy: "Löschen"
-          save_error: "Beim Speichern des Kapitels ist ein Problem aufgetreten."
-          retry: "Erneut versuchen"
+          destroy: Löschen
+          outline: Gliederung
+          retry: Erneut versuchen
+          save_error: Beim Speichern des Kapitels ist ein Problem aufgetreten.
         edit_entry:
-          close: "Schließen"
-          publish: "Veröffentlichen..."
-          metadata: "Titel und Optionen"
-          save_error: "Beim Speichern der Metadaten ist ein Fehler aufgetreten."
-          manage_files: "Dateien verwalten"
-          outline: "Gliederung"
-          new_chapter: "Neues Kapitel"
+          close: Schließen
+          manage_files: Dateien verwalten
+          metadata: Titel und Optionen
+          new_chapter: Neues Kapitel
+          outline: Gliederung
+          publish: Veröffentlichen...
+          save_error: Beim Speichern der Metadaten ist ein Fehler aufgetreten.
         edit_meta_data:
-          outline: "Gliederung"
-          save_error: "Beim Speichern der Metadaten ist ein Problem aufgetreten."
-          retry: "Erneut versuchen"
+          outline: Gliederung
+          retry: Erneut versuchen
+          save_error: Beim Speichern der Metadaten ist ein Problem aufgetreten.
         edit_page:
-          outline: "Gliederung"
-          destroy: "Löschen"
-          save_error: "Beim Speichern der Seite ist ein Problem aufgetreten."
-          retry: "Erneut versuchen"
+          destroy: Löschen
+          outline: Gliederung
+          retry: Erneut versuchen
+          save_error: Beim Speichern der Seite ist ein Problem aufgetreten.
+        embedded:
+          page_link:
+            reset: Zurücksetzen
         file_item:
-          select: "Auswählen"
-          confirm: "Überprüfen und bestätigen"
-          retry: "Erneut versuchen"
-          destroy: "Löschen"
-          cancel: "Abbrechen"
-          credits: "Rechte"
-          source: "Original"
-          download: "Herunterladen"
+          cancel: Abbrechen
+          confirm: Überprüfen und bestätigen
+          credits: Rechte
+          destroy: Löschen
+          download: Herunterladen
+          retry: Erneut versuchen
+          select: Auswählen
+          source: Original
         files:
-          back: "Zurück"
+          back: Zurück
         files_blank_slate:
-          no_files: "Es wurden noch keine Dateien dieses Typs hochgeladen."
+          no_files: Es wurden noch keine Dateien dieses Typs hochgeladen.
         files_explorer:
-          reuse_files: "Dateien wiederverwenden"
-          ok: "Ok"
-          cancel: "Abbrechen"
+          cancel: Abbrechen
+          ok: Ok
+          reuse_files: Dateien wiederverwenden
         files_explorer_blank_slate:
-          choose_hint: "Bitte w&auml;hlen Sie einen Beitrag aus."
+          choose_hint: Bitte w&auml;hlen Sie einen Beitrag aus.
         files_gallery_blank_slate:
-          no_files: "In diesem Beitrag gibt es keine Dateien dieses Typs."
+          no_files: In diesem Beitrag gibt es keine Dateien dieses Typs.
         help_button:
-          open_help: "Hilfe anzeigen"
+          open_help: Hilfe anzeigen
         image_positioning:
-          adjust_positioning: "Bildauschnitt anpassen"
-          aspect_ratio: "Seitenverhältnis"
-          save: "Speichern"
-          cancel: "Abbrechen"
+          adjust_positioning: Bildauschnitt anpassen
+          aspect_ratio: Seitenverhältnis
+          cancel: Abbrechen
+          save: Speichern
         loading:
-          loading: "Daten werden geladen."
+          loading: Daten werden geladen.
         locked:
-          loading: "Der Beitrag wird zur Bearbeitung geöffnet. Bitte warten..."
-          close: "Editor schließen"
-          open_here: "Stattdessen hier öffnen"
+          close: Editor schließen
+          loading: Der Beitrag wird zur Bearbeitung geöffnet. Bitte warten...
+          open_here: Stattdessen hier öffnen
         notification:
-          upload_pending: "Dateien werden gerade hochgeladen."
-          save_error: "Datensätze konnten nicht gespeichert werden."
-          retry: "Erneut versuchen"
-          saving: "Änderungen werden gespeichert..."
-          saved: "Alle Änderungen wurden gespeichert."
-          approve_files: "%{num_files} Dateien müssen für die Transcodierung freigeben werden."
-          show: "Anzeigen"
+          approve_files: ! '%{num_files} Dateien müssen für die Transcodierung freigeben werden.'
+          retry: Erneut versuchen
+          save_error: Datensätze konnten nicht gespeichert werden.
+          saved: Alle Änderungen wurden gespeichert.
+          saving: Änderungen werden gespeichert...
+          show: Anzeigen
+          upload_pending: Dateien werden gerade hochgeladen.
         other_entries_blank_slate:
-          none_available: "Keine anderen Beiträge verfügbar"
+          none_available: Keine anderen Beiträge verfügbar
         page_item:
-          save_error: "Beim Speichern der Seite ist ein Fehler aufgetreten."
+          save_error: Beim Speichern der Seite ist ein Fehler aufgetreten.
         publish_entry:
-          files_pending_notice: "Bitte warten Sie bis alle Dateien des Beitrags verarbeitet wurden und überprüfen Sie das Ergebnis. Der Beitrag kann dann veröffentlicht werden."
-          show_files: "Dateien anzeigen"
-          published_notice: "Eine Revision dieses Beitrags ist zur Zeit veröffentlicht."
-          view_revisions: "Revisionen ansehen"
-          not_published_notice: "Dieser Beitrag ist zur Zeit nicht veröffentlicht."
-          publish_current: "Akuellen Stand veröffentlichen"
-          unlimited: "Unbegrenzt"
-          until_including: "Bis einschließlich"
-          date: "Datum"
-          time: "Uhrzeit"
-          publish: "Veröffentlichen"
-          publish_success: "Der Beitrag wurde erfolgreich veröffentlicht."
-          published_url_hint: "Er kann nun unter folgender URL erreicht werden:"
+          date: Datum
+          files_pending_notice: Bitte warten Sie bis alle Dateien des Beitrags verarbeitet wurden und überprüfen Sie das Ergebnis. Der Beitrag kann dann veröffentlicht werden.
+          not_published_notice: Dieser Beitrag ist zur Zeit nicht veröffentlicht.
+          publish: Veröffentlichen
+          publish_current: Akuellen Stand veröffentlichen
+          publish_success: Der Beitrag wurde erfolgreich veröffentlicht.
+          published_notice: Eine Revision dieses Beitrags ist zur Zeit veröffentlicht.
+          published_url_hint: ! 'Er kann nun unter folgender URL erreicht werden:'
+          show_files: Dateien anzeigen
+          time: Uhrzeit
+          unlimited: Unbegrenzt
+          until_including: Bis einschließlich
+          view_revisions: Revisionen ansehen
         select_button:
-          select: "Ausw&auml;hlen"
+          select: Ausw&auml;hlen
       views:
         editor_views:
-          files_pending_warning: "Es werden noch Dateien hochgeladen. Wenn Sie die Seite verlassen werden die Uploads abgebrochen."
-          show_editor: "Editorleiste einblenden"
-          hide_editor: "Editorleiste ausblenden"
-          resize_editor: "Größe der Editorleiste ändern"
+          files_pending_warning: Es werden noch Dateien hochgeladen. Wenn Sie die Seite verlassen werden die Uploads abgebrochen.
+          hide_editor: Editorleiste ausblenden
+          resize_editor: Größe der Editorleiste ändern
+          show_editor: Editorleiste einblenden
         entry_preview_view:
-          scroll_hint: "Scrollen, um weiterzulesen"
-    ui:
-      configuration_editor:
-        tabs:
-          general: "Allgemein"
-          files: "Dateien"
-          options: "Optionen"
-          links: "Verweise"
-          widgets: "Erscheinungsbild"
-      inline_help:
-        "pageflow/page":
-          invert: "Dunkle Schrift und helle Schattierung anzeigen."
-          gradient_opacity: "Wählen Sie die Intensität des Farbverlaufs so, dass ein ausreichender Kontrast zwischen Text und Hintegrund gewährleistet ist."
-          description: "Dieser Text wird auf der Übersichtseite angezeigt, wenn Sie den Mauszeiger über dem Vorschaubild einer Seite platzieren."
-          additional_title: "Die Infobox wird über den Steuerelementen zum Starten und Stoppen der Wiedegabe angezeigt."
-          text: "Empfohlene Textlänge: 220 Zeichen"
-          thumbnail_image_id: "Dieses Bild wird in der Navigationsleiste und anderen Verweisen auf die Seite gezeigt."
-          mobile_poster_image_id: "Dieses Bild wird in der Mobilvariante der Seite als Posterbild gezeigt."
-        "pageflow/entry":
-          title: "Vom Browser angezeigter Titel der Seite."
-          summary: "Zusammenfassung die an Soziale Netzwerke weitergeben wird."
-          credits: "Text wird zusammen mit dem Impressumsverweis angezeigt."
-          manual_start: "Besucher muss den Start des Beitrags durch einen Klick bestätigen."
-          home_button_enabled: "Link zu einer Übersichtsseite anzeigen."
-          home_button_enabled_disabled: "Diese Funktion steht in diesem Theme nicht zur Verfügung."
-          home_url: "URL der Übersichtseite. Leer lassen, um Standard zu übernehmen."
-          home_url_disabled: "Diese Funktion steht in diesem Theme nicht zur Verfügung."
-        "pageflow/chapter":
-          title: "Wird auf der Übersichtsseite angezeigt."
-      templates:
-        inputs:
-          file_input:
-            adjust_positioning: "Bildausschnitt anpassen"
-            reset: "Zurücksetzen"
-            edit: "Ändern"
-          page_reference:
-            drag_hint: "Ziehen Sie Seiten per Drag &amp; Drop in die Seite um Verweise zu erstellen."
-          text_area_input:
-            bold: "Fett"
-            italic: "Kursiv"
-            underline: "Unterstrichen"
-            create_link: "Link einfügen"
-            url: "URL"
-            ok: "Ok"
-            cancel: "Abbrechen"
-      views:
-        inputs:
-          file_input_view:
-            none: "(Kein)"
-          proxy_url_input_view:
-            url_validation: "Prüfe Erreichbarkeit der URL..."
-            http_error: "Die URL konnte nicht erfolgreich abgerufen werden (Der Server antwortete mit HTTP Status Code ' %{status}')"
-          text_input_view:
-            required_field: "Muss ausgefüllt werden"
-          url_input_view:
-            required_field: "Muss ausgefüllt werden"
-            url_hint: "URL muss mit http:// beginnen."
-            supported_vendors: "Es werden nur die folgenden Anbieter unterstützt:"
-          select_input_view:
-            placeholder: "Standard (%{text})"
-            none: "(Kein)"
+          scroll_hint: Scrollen, um weiterzulesen
     entries:
+      entry:
+        print_logo: Logo
+        scroll_indicator: Scrollen, um weiterzulesen
+        swipe_indicator: Wischen, um Text wieder einzublenden
+      ie8_hint:
+        close: Hinweis schließen
+        deprecated_browser: <p>Liebe Nutzer,</p><p>leider nutzen Sie eine veraltete Version Ihres Browsers. Deshalb können die an dieser Stelle vorgesehenen Inhalte nicht korrekt dargestellt werden. Bitte aktualisieren Sie auf eine aktuelle Version. Unter <a href="http://www.browserchoice.eu/">http://www.browserchoice.eu/</a> stehen alternative Browser zur Verfügung.  Für eine Installation benötigen Sie gegebenenfalls Administrator-Rechte. </p>
+      mobile_navigation:
+        imprint: Impressum
+        overview: Übersicht
+        share_with_facebook: Auf Facebook teilen
+        share_with_google: Auf Google+ teilen
+        share_with_twitter: Twittern
+      multimedia_alert:
+        alert: Hinweis
+        close: Los geht's
+        scroll_hint: Mit dem Mausrad oder den Pfeiltasten auf der Tastatur wird die jeweils nächste Kapitelseite aufgerufen.
+        sound_hint: Für dieses multimediale Reportage-Format nutzen wir neben Texten und Fotos auch Audios und Videos. Daher sollten die Lautsprecher des Systems eingeschaltet sein.
+        swipe_hint: Durch Wischen wird die jeweils nächste Kapitelseite aufgerufen.
       navigation:
+        bar_bottom:
+          close_fullscreen: Vollbilddarstellung beenden
+          hide_text: Text ausblenden
+          mute_off: Ton ein
+          mute_on: Ton aus
+          open_fullscreen: Vollbilddarstellung
+          scroll_down: Runter scrollen
+          show_text: Text wieder einblenden
+          volume: Lautstärke
         bar_top:
           close_overview: Übersicht schließen
           close_top_navigation: Navigation schließen
@@ -887,81 +952,116 @@ de:
           share_with_facebook: Auf Facebook teilen
           share_with_google: Auf Google+ teilen
           share_with_twitter: Twittern
-        bar_bottom:
-          scroll_down: Runter scrollen
-          open_fullscreen: Vollbilddarstellung
-          close_fullscreen: Vollbilddarstellung beenden
-          hide_text: Text ausblenden
-          show_text: Text wieder einblenden
-          volume: Lautstärke
-          mute_on: Ton aus
-          mute_off: Ton ein
         home_button:
           show_home: Zur Startseite
-      overview:
-          chapter:
-            chapter: Kapitel
-          entry:
-            overview: Übersicht
-            scroll_left: Nach links scrollen
-            scroll_right: Nach rechts scrollen
-      entry:
-        print_logo: Logo
-        scroll_indicator: Scrollen, um weiterzulesen
-        swipe_indicator: Wischen, um Text wieder einzublenden
-      ie8_hint:
-        deprecated_browser: "<p>Liebe Nutzer,</p><p>leider nutzen Sie eine veraltete Version Ihres Browsers. Deshalb können die an dieser Stelle vorgesehenen Inhalte nicht korrekt dargestellt werden. Bitte aktualisieren Sie auf eine aktuelle Version. Unter <a href=\"http://www.browserchoice.eu/\">http://www.browserchoice.eu/</a> stehen alternative Browser zur Verfügung.  Für eine Installation benötigen Sie gegebenenfalls Administrator-Rechte. </p>"
-        close: Hinweis schließen
-      mobile_navigation:
-        overview: Übersicht
-        share_with_facebook: Auf Facebook teilen
-        share_with_google: Auf Google+ teilen
-        share_with_twitter: Twittern
-        imprint: Impressum
-      multimedia_alert:
-        alert: Hinweis
-        sound_hint: "Für dieses multimediale Reportage-Format nutzen wir neben Texten und Fotos auch Audios und Videos. Daher sollten die Lautsprecher des Systems eingeschaltet sein."
-        scroll_hint: "Mit dem Mausrad oder den Pfeiltasten auf der Tastatur wird die jeweils nächste Kapitelseite aufgerufen."
-        swipe_hint: "Durch Wischen wird die jeweils nächste Kapitelseite aufgerufen."
-        close: "Los geht's"
       non_js_hint:
-        js_hint: "Zur korrekten Anzeige der Seite benötigen Sie JavaScript."
+        js_hint: Zur korrekten Anzeige der Seite benötigen Sie JavaScript.
+      overview:
+        chapter:
+          chapter: Kapitel
+        entry:
+          overview: Übersicht
+          scroll_left: Nach links scrollen
+          scroll_right: Nach rechts scrollen
       skip_links:
-        goto_content: "Zum Inhalt"
-        goto_topnavigation: "Zur Dachnavigation"
-        goto_navigation: "Zur Seitennavigation"
-    user_mailer:
-      invitation:
-        subject: Ihre Pageflow Einladung
-    devise:
-      mailer:
-        confirmation_instructions:
-        reset_password_instructions:
-          salutation: "Hallo %{first_name}"
-          instruction: "für dein persönliches Pageflow-Benutzerkonto wurde ein Link zur Passwortänderung angefordert. Du kannst diese Aktion durchführen, indem du folgenden Link anklickst."
-          ignore_hint: "Falls Du diese Anfrage zur Passwortänderung gar nicht selbst gestartet hast, ignorier diese Mail einfach. Dein Passwort wird nicht geändert, bevor du den oben stehenden Link nicht bestätigt hast und im Anschluss ein neues Passwort anlegst."
+        goto_content: Zum Inhalt
+        goto_navigation: Zur Seitennavigation
+        goto_topnavigation: Zur Dachnavigation
+    helpers:
+      entries:
+        global_links: Globale Links
+        image_rights: Bildrechte
+    invalid_transition: Der gewünschte Status Wechsel ist nicht erlaubt.
     pages:
       templates:
         audio:
-          hint: "Audio"
+          hint: Audio
         background_video:
-          hint: "Video Loop"
-        video:
-          hint: "Video"
+          hint: Video Loop
         page:
-          goto_top: "zum Anfang"
+          goto_top: zum Anfang
+        video:
+          hint: Video
         video_tag:
-          view_video: "Video ansehen"
+          view_video: Video ansehen
+    quotas:
+      exhausted: Quota verbraucht.
+    ui:
+      configuration_editor:
+        tabs:
+          files: Dateien
+          general: Allgemein
+          links: Verweise
+          options: Optionen
+          widgets: Erscheinungsbild
+      inline_help:
+        pageflow/chapter:
+          title: Wird auf der Übersichtsseite angezeigt.
+        pageflow/entry:
+          credits: Text wird zusammen mit dem Impressumsverweis angezeigt.
+          home_button_enabled: Link zu einer Übersichtsseite anzeigen.
+          home_button_enabled_disabled: Diese Funktion steht in diesem Theme nicht zur Verfügung.
+          home_url: URL der Übersichtseite. Leer lassen, um Standard zu übernehmen.
+          home_url_disabled: Diese Funktion steht in diesem Theme nicht zur Verfügung.
+          manual_start: Besucher muss den Start des Beitrags durch einen Klick bestätigen.
+          summary: Zusammenfassung die an Soziale Netzwerke weitergeben wird.
+          title: Vom Browser angezeigter Titel der Seite.
+        pageflow/page:
+          additional_title: Die Infobox wird über den Steuerelementen zum Starten und Stoppen der Wiedegabe angezeigt.
+          description: Dieser Text wird auf der Übersichtseite angezeigt, wenn Sie den Mauszeiger über dem Vorschaubild einer Seite platzieren.
+          gradient_opacity: Wählen Sie die Intensität des Farbverlaufs so, dass ein ausreichender Kontrast zwischen Text und Hintegrund gewährleistet ist.
+          invert: Dunkle Schrift und helle Schattierung anzeigen.
+          mobile_poster_image_id: Dieses Bild wird in der Mobilvariante der Seite als Posterbild gezeigt.
+          text: ! 'Empfohlene Textlänge: 220 Zeichen'
+          thumbnail_image_id: Dieses Bild wird in der Navigationsleiste und anderen Verweisen auf die Seite gezeigt.
+      templates:
+        inputs:
+          file_input:
+            adjust_positioning: Bildausschnitt anpassen
+            edit: Ändern
+            reset: Zurücksetzen
+          page_reference:
+            drag_hint: Ziehen Sie Seiten per Drag &amp; Drop in die Seite um Verweise zu erstellen.
+          text_area_input:
+            bold: Fett
+            cancel: Abbrechen
+            create_link: Link einfügen
+            italic: Kursiv
+            ok: Ok
+            underline: Unterstrichen
+            url: URL
+      views:
+        inputs:
+          file_input_view:
+            none: (Kein)
+          proxy_url_input_view:
+            http_error: Die URL konnte nicht erfolgreich abgerufen werden (Der Server antwortete mit HTTP Status Code ' %{status}')
+            url_validation: Prüfe Erreichbarkeit der URL...
+          select_input_view:
+            none: (Kein)
+            placeholder: Standard (%{text})
+          text_input_view:
+            required_field: Muss ausgefüllt werden
+          url_input_view:
+            required_field: Muss ausgefüllt werden
+            supported_vendors: ! 'Es werden nur die folgenden Anbieter unterstützt:'
+            url_hint: URL muss mit http:// beginnen.
+    unauthorized: Sie sind nicht berechtigt diese Seite anzuzeigen.
     user_mailer:
       invitation:
-        salutation: "Hallo %{first_name}"
-        instruction: "Willkommen bei Pageflow. Bitte lege über den folgenden Link ein Kennwort fest. In Zukunft kannst Du Dich dann mit Deiner E-Mail-Adresse anmelden."
-        ending: "Dankeschön und viel Spaß,"
-        greeting: "Dein Pageflow-Team"
-    helpers:
-      entries:
-        image_rights: "Bildrechte"
-        global_links: "Globale Links"
+        ending: Dankeschön und viel Spaß,
+        greeting: Dein Pageflow-Team
+        instruction: Willkommen bei Pageflow. Bitte lege über den folgenden Link ein Kennwort fest. In Zukunft kannst Du Dich dann mit Deiner E-Mail-Adresse anmelden.
+        salutation: Hallo %{first_name}
+    widgets:
+      none: (Kein)
+      roles:
+        analytics: Zählpixel
+        mobile_navigation: Mobile Navigation
+        navigation: Navigationsleiste
+      type_names:
+        default_mobile_navigation: Navigationsmenü mit Thumbnails
+        default_navigation: Navigationsleiste mit Thumbnails
   support:
     array:
       last_word_connector: ! ' und '
