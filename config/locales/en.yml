@@ -731,6 +731,16 @@ en:
         suspended: ! 'The user was suspended and will not be able to sign-in again. '
         unsuspend: Unsuspend
         unsuspended: The user was unsuspended.
+        delete_me:
+          cancel_label: No, do not delete my account!
+          delete_label: Delete account
+          warning_html: Please enter your current password to confirm deletion of your account. <b>All data will be deleted. This action cannot be undone.</b>
+        me:
+          change_password_hint: Leave blank to keep your current password.
+          delete_account: Delete account
+          delete_account_hint: You don't want to continue using Pageflow?
+          deleted: Your account has been deleted. You may sign-up for a new one at any time!
+          updated: Your profile has been updated.
     audio:
       open: Play audio
     devise:

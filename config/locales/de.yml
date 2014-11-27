@@ -731,6 +731,16 @@ de:
         suspended: Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden.
         unsuspend: Entsperren
         unsuspended: Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden.
+        delete_me:
+          cancel_label: Nein, mein Benutzerkonto nicht löschen
+          delete_label: Benutzerkonto löschen
+          warning_html: Gib Dein aktuelles Passwort ein, um zu bestätigen, dass Du Dein Benutzerkonto wirklich löschen möchtest. <b>Alle Deine Daten gehen dabei verloren. Der Vorgang kann nicht rückgangig gemacht werden.</b>
+        me:
+          change_password_hint: Freilassen um bisheriges Passwort beizubehalten.
+          delete_account: Benutzerkonto löschen
+          delete_account_hint: Du möchtest die Anwendung nicht mehr nutzen?
+          deleted: Dein Benutzerkonto wurde gelöscht.
+          updated: Dein Profil wurde aktualisiert.
     audio:
       open: Audio anhören
     devise:
