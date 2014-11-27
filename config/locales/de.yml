@@ -467,7 +467,7 @@ de:
       not_found_in_database: Es wurde kein Benutzer mit diesen Anmeldedaten gefunden.
       timeout: Deine Sitzung ist abgelaufen, bitte melde Dich erneut an.
       unauthenticated: Du musst dich anmelden oder registrieren, bevor du fortfahren kannst.
-      unconfirmed: Du musst deinen Account bestätigen, bevor du eigenes Bildmaterial hochladen oder andere Bilder und Videos bewerten kannst.
+      unconfirmed: Du musst deinen Account bestätigen, bevor du fortfahren kannst.
     mailer:
       confirmation_instructions:
         subject: Bestätigung
@@ -628,7 +628,7 @@ de:
           trillion: Billionen
           unit: Einheit
       format:
-        delimiter: 
+        delimiter: ''
         precision: 1
         significant: true
         strip_insignificant_zeros: true
@@ -644,11 +644,11 @@ de:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter: ''
         format: ! '%n%'
     precision:
       format:
-        delimiter: 
+        delimiter: ''
   pageflow:
     admin:
       accounts:
@@ -858,7 +858,7 @@ de:
           ok: Ok
           reuse_files: Dateien wiederverwenden
         files_explorer_blank_slate:
-          choose_hint: Bitte w&auml;hlen Sie einen Beitrag aus.
+          choose_hint: Bitte wählen Sie einen Beitrag aus.
         files_gallery_blank_slate:
           no_files: In diesem Beitrag gibt es keine Dateien dieses Typs.
         help_button:
@@ -901,7 +901,7 @@ de:
           until_including: Bis einschließlich
           view_revisions: Revisionen ansehen
         select_button:
-          select: Ausw&auml;hlen
+          select: Auswählen
       views:
         editor_views:
           files_pending_warning: Es werden noch Dateien hochgeladen. Wenn Sie die Seite verlassen werden die Uploads abgebrochen.
@@ -971,7 +971,7 @@ de:
       entries:
         global_links: Globale Links
         image_rights: Bildrechte
-    invalid_transition: Der gewünschte Status Wechsel ist nicht erlaubt.
+    invalid_transition: Der gewünschte Statuswechsel ist nicht erlaubt.
     pages:
       templates:
         audio:

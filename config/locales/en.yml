@@ -203,7 +203,7 @@ en:
         poster_image_id: Posterimage
         subtitle: Subtitle
         tagline: Tagline
-        template: 
+        template: Pagetype
         text: Text
         text_position: Textposition
         thumbnail_image_id: Thumbnail
@@ -644,11 +644,11 @@ en:
           tb: TB
     percentage:
       format:
-        delimiter: 
+        delimiter: ''
         format: ! '%n%'
     precision:
       format:
-        delimiter: 
+        delimiter: ''
   pageflow:
     admin:
       accounts:
@@ -701,7 +701,7 @@ en:
         revisions: Versions
         users: User
       revisions:
-        published_until_hint: Leave blank for unlimited
+        published_until_hint: Leave blank to publish indefinitely.
       themings:
         cname_hint: For social sharing
         name: ! '%{account_name}'
@@ -737,331 +737,333 @@ en:
       mailer:
         confirmation_instructions: 
         reset_password_instructions:
-          ignore_hint: 
-          instruction: 
-          salutation: 
+          ignore_hint: Please ignore this mail If you have not requested a password reset. Your password will not be changed in this case.
+          instruction: Somebody recently asked to reset your Pageflow password. Click here to change your password.
+          salutation: Hello %{first_name}
     edit_locks:
       break_action:
-        aquire: 
+        aquire: Continue here
       errors:
         held_by_other_session_error:
-          aquire_html: 
-          other_html: 
+          aquire_html: <p>This story is already open in another editor window.</p>
+          other_html: ! '<p>This story is already open in another editor window. Please reload this page and click on the ''Continue here'' button.</p>
+
+            <p>If you continue working without reload, data loss may occur.</p>'
         held_by_other_user_error:
-          aquire_html: 
-          other_html: 
+          aquire_html: <p><strong>%{user_name}</strong> is currently working on this story or has left the editor window open. Click 'Continue here' to take over.</p>
+          other_html: <p><strong>%{user_name}</strong> has ended your editor session. Please reload the page and click 'Continue here' to view the current version.</p>
         not_held_error:
-          other_html: 
-      required: 
-      required_but_held_by_other_user: 
+          other_html: <p>Your editor session has been ended from another session. Please reload the page and click 'Continue here' to view the current version.</p>
+      required: This action cannot be executed because this story has been opened in another editor session.
+      required_but_held_by_other_user: This action cannot be executed because this story has been opened by another user.
     editor:
       blank_entry:
-        create_chapter: 
-        create_page: 
-        edit_page: 
-        header: 
-        intro: 
-        outro: 
+        create_chapter: Click <em>New chapter</em> to create your first chapter.
+        create_page: Use the <em>New page</em> button within the chapter to add pages.
+        edit_page: Click directly on a page to switch to the pages edit view.
+        header: This is an empty Pageflow
+        intro: Each Pageflow consist of chapters and pages. The editor panel to your right shows the outline of your story.
+        outro: In this area, a live preview will be shown.
       errors:
-        UnmatchedUploadError: 
-        unknown: 
+        UnmatchedUploadError: This filetype is not supported.
+        unknown: A unknown error has occurred.
       files:
         stages:
           encoding:
-            action_required: 
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            action_required: Confirmation required.
+            active: Encoding in progress.
+            failed: Encoding failed.
+            finished: Encoding was successful.
+            pending: Encoding pending.
           fetching_meta_data:
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            active: Fetching metadata.
+            failed: Metadata failure.
+            finished: Metadata successfully fetched.
+            pending: Metadata polling pending.
           processing:
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            active: Processing.
+            failed: Processing failure.
+            finished: Processing successfully finished.
+            pending: Processing pending.
           uploading:
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            active: Upload in progress.
+            failed: Upload failure.
+            finished: Successfully uploaded.
+            pending: Upload pending.
           uploading_to_s3:
-            active: 
-            failed: 
-            finished: 
-            pending: 
+            active: Transfering to S3.
+            failed: Transfer to S3 failed.
+            finished: Successfully transferred to S3.
+            pending: Transfer to S3 pending.
         tabs:
-          audio_files: 
-          image_files: 
-          video_files: 
+          audio_files: Audios
+          image_files: Images
+          video_files: Videos
       screens:
-        ratio16to9: 
-        ratio4to3: 
+        ratio16to9: '16:9'
+        ratio4to3: '4:3'
       templates:
         back_button_decorator:
-          outline: 
+          outline: Outline
         chapter_item:
-          new_page: 
-          save_error: 
+          new_page: New page
+          save_error: Errors were detected while saving this chapter.
         confirm_encoding:
-          all_released: 
-          audios_tab: 
-          confirm_button: 
-          link_to_progress: 
-          manage_files: 
-          videos_tab: 
+          all_released: ! 'All files have been scheduled for encoding. '
+          audios_tab: Audios
+          confirm_button: Encode selected files
+          link_to_progress: The %{link} page shows encoding progress.
+          manage_files: Manage files
+          videos_tab: Videos
         confirmable_file_item:
-          remove: 
+          remove: Remove
         edit_chapter:
-          destroy: 
-          outline: 
-          retry: 
-          save_error: 
+          destroy: Delete
+          outline: Outline
+          retry: Retry
+          save_error: Errors were detected while saving this chapter.
         edit_entry:
-          close: 
-          manage_files: 
-          metadata: 
-          new_chapter: 
-          outline: 
-          publish: 
-          save_error: 
+          close: Close
+          manage_files: Manage files
+          metadata: Title and options
+          new_chapter: New chapter
+          outline: Outline
+          publish: Publish
+          save_error: There were errors while saving metadata.
         edit_meta_data:
-          outline: 
-          retry: 
-          save_error: 
+          outline: Outline
+          retry: Retry
+          save_error: There were errors while saving metadata.
         edit_page:
-          destroy: 
-          outline: 
-          retry: 
-          save_error: 
+          destroy: Delete
+          outline: Outline
+          retry: Retry
+          save_error: There were errors while saving page.
         embedded:
           page_link:
-            reset: 
+            reset: Reset
         file_item:
-          cancel: 
-          confirm: 
-          credits: 
-          destroy: 
-          download: 
-          retry: 
-          select: 
-          source: 
+          cancel: Cancel
+          confirm: Confirm
+          credits: Credits
+          destroy: Delete
+          download: Download
+          retry: Retry
+          select: Select
+          source: Source
         files:
-          back: 
+          back: Back
         files_blank_slate:
-          no_files: 
+          no_files: There are no files of this type, yet. You can upload one to get started.
         files_explorer:
-          cancel: 
-          ok: 
-          reuse_files: 
+          cancel: Cancel
+          ok: Ok
+          reuse_files: Reuse files from other stories
         files_explorer_blank_slate:
-          choose_hint: 
+          choose_hint: Please choose a story.
         files_gallery_blank_slate:
-          no_files: 
+          no_files: This story does not contain any files of this type.
         help_button:
-          open_help: 
+          open_help: Open help
         image_positioning:
-          adjust_positioning: 
-          aspect_ratio: 
-          cancel: 
-          save: 
+          adjust_positioning: Adjust positioning
+          aspect_ratio: Aspect ratio
+          cancel: Cancel
+          save: Save
         loading:
-          loading: 
+          loading: Loading...
         locked:
-          close: 
-          loading: 
-          open_here: 
+          close: Close editor
+          loading: Loading story. Please wait...
+          open_here: Continue here
         notification:
-          approve_files: 
-          retry: 
-          save_error: 
-          saved: 
-          saving: 
-          show: 
-          upload_pending: 
+          approve_files: ! '%{num_files} files awaiting confirmation for the encoding process.'
+          retry: Retry
+          save_error: There were errors while saving changes.
+          saved: All changes have been saved.
+          saving: Saving changes...
+          show: Show
+          upload_pending: Uploads pending.
         other_entries_blank_slate:
-          none_available: 
+          none_available: There are no other stories yet
         page_item:
-          save_error: 
+          save_error: There were errors while saving page.
         publish_entry:
-          date: 
-          files_pending_notice: 
-          not_published_notice: 
-          publish: 
-          publish_current: 
-          publish_success: 
-          published_notice: 
-          published_url_hint: 
-          show_files: 
-          time: 
-          unlimited: 
-          until_including: 
-          view_revisions: 
+          date: Date
+          files_pending_notice: Please wait until all files have been processed and check the results. You may then publish your story.
+          not_published_notice: This story is currently not published.
+          publish: Publish
+          publish_current: Publish current version
+          publish_success: Your story has been sucessfully published.
+          published_notice: A version of this story is currently published.
+          published_url_hint: ! 'It can be accessed using following URL:'
+          show_files: Show files
+          time: Time
+          unlimited: indefinitely
+          until_including: Until including
+          view_revisions: View versions
         select_button:
-          select: 
+          select: Select
       views:
         editor_views:
-          files_pending_warning: 
-          hide_editor: 
-          resize_editor: 
-          show_editor: 
+          files_pending_warning: You are currently uploading files. All uploads will be canceled if you leave this page.
+          hide_editor: Hide editor panel
+          resize_editor: Resize editor panel
+          show_editor: Show editor panel
         entry_preview_view:
-          scroll_hint: 
+          scroll_hint: Scroll down to continue
     entries:
       entry:
-        print_logo: 
-        scroll_indicator: 
-        swipe_indicator: 
+        print_logo: Logo
+        scroll_indicator: Scroll down to continue
+        swipe_indicator: Swipe to continue
       ie8_hint:
-        close: 
-        deprecated_browser: 
+        close: Close
+        deprecated_browser: <p>Your browser is outdated and this page might not work as intended. We recommend upgrading to a current browser version. Please visit <a href="http://www.browserchoice.eu/">http://www.browserchoice.eu/</a> for download suggestions.</p>
       mobile_navigation:
-        imprint: 
-        overview: 
-        share_with_facebook: 
-        share_with_google: 
-        share_with_twitter: 
+        imprint: Imprint
+        overview: Overview
+        share_with_facebook: Share on Facebook
+        share_with_google: Share on Google+
+        share_with_twitter: Tweet
       multimedia_alert:
-        alert: 
-        close: 
-        scroll_hint: 
-        sound_hint: 
-        swipe_hint: 
+        alert: Alert
+        close: Continue
+        scroll_hint: Use the mouse wheel or the arrow keys on your keyboard to navigate between pages.
+        sound_hint: This multimedia story format uses video and audio footage. Please make sure your speakers are turned on.
+        swipe_hint: Swipe to navigate between pages.
       navigation:
         bar_bottom:
-          close_fullscreen: 
-          hide_text: 
-          mute_off: 
-          mute_on: 
-          open_fullscreen: 
-          scroll_down: 
-          show_text: 
-          volume: 
+          close_fullscreen: Exit fullscreen mode
+          hide_text: Hide text
+          mute_off: Unmute
+          mute_on: Mute
+          open_fullscreen: Fullscreen mode
+          scroll_down: Scroll down
+          show_text: Show text
+          volume: Volume
         bar_top:
-          close_overview: 
-          close_top_navigation: 
-          imprint: 
-          navigate_top: 
-          open_overview: 
-          open_top_navigation: 
-          scroll_up: 
-          share: 
-          share_with_facebook: 
-          share_with_google: 
-          share_with_twitter: 
+          close_overview: Close overview
+          close_top_navigation: Close navigation
+          imprint: Imprint
+          navigate_top: Goto first page
+          open_overview: Overview
+          open_top_navigation: Open navigation
+          scroll_up: Scroll up
+          share: Share
+          share_with_facebook: Share on Facebook
+          share_with_google: Share on Google+
+          share_with_twitter: Tweet
         home_button:
-          show_home: 
+          show_home: Start
       non_js_hint:
-        js_hint: 
+        js_hint: This application utilizes JavaScript for enhanced functionality and user experience. Your browser may not have JavaScript or it may be disabled.
       overview:
         chapter:
-          chapter: 
+          chapter: Chapter
         entry:
-          overview: 
-          scroll_left: 
-          scroll_right: 
+          overview: Overview
+          scroll_left: Scroll left
+          scroll_right: Scroll right
       skip_links:
-        goto_content: 
-        goto_navigation: 
-        goto_topnavigation: 
+        goto_content: Goto content
+        goto_navigation: Goto navigation
+        goto_topnavigation: Goto main navigation
     helpers:
       entries:
-        global_links: 
-        image_rights: 
-    invalid_transition: 
+        global_links: Global links
+        image_rights: Credits
+    invalid_transition: Invalid transition
     pages:
       templates:
         audio:
-          hint: 
+          hint: Audio
         background_video:
-          hint: 
+          hint: Video loop
         page:
-          goto_top: 
+          goto_top: Goto first page
         video:
-          hint: 
+          hint: Video
         video_tag:
-          view_video: 
+          view_video: Play video
     quotas:
-      exhausted: 
+      exhausted: Quota exhausted
     ui:
       configuration_editor:
         tabs:
-          files: 
-          general: 
-          links: 
-          options: 
-          widgets: 
+          files: Files
+          general: General
+          links: Links
+          options: Options
+          widgets: Apperance
       inline_help:
         pageflow/chapter:
-          title: 
+          title: Will be shown on the overview page.
         pageflow/entry:
-          credits: 
-          home_button_enabled: 
-          home_button_enabled_disabled: 
-          home_url: 
-          home_url_disabled: 
-          manual_start: 
-          summary: 
-          title: 
+          credits: Will be shown in the info box.
+          home_button_enabled: Show button to your home page.
+          home_button_enabled_disabled: This option is not available for your theme.
+          home_url: URL of your home page. Leave empty to use your accounts default setting.
+          home_url_disabled: This option is not available for your theme.
+          manual_start: Visitors must start the story manually.
+          summary: Summary text used for sharing within social networks.
+          title: Title that appears in your browser bar or tab.
         pageflow/page:
-          additional_title: 
-          description: 
-          gradient_opacity: 
-          invert: 
-          mobile_poster_image_id: 
-          text: 
-          thumbnail_image_id: 
+          additional_title: The info box appears close to the player controls.
+          description: Summary of this page that is used on the overview overlay and for social sharing.
+          gradient_opacity: Adjust gradient opacity to gain optimal contrast between text and background. Keep in mind that the position of elements varies with screen sizes.
+          invert: Use dark font color and bright gradient.
+          mobile_poster_image_id: This image is used as poster image on mobile devices.
+          text: ! 'Recommended text length: 220 Chars'
+          thumbnail_image_id: This image will be used as thumbnail in the navigation bar and for internal links to this page.
       templates:
         inputs:
           file_input:
-            adjust_positioning: 
-            edit: 
-            reset: 
+            adjust_positioning: Adjust field of view
+            edit: Edit
+            reset: Reset
           page_reference:
-            drag_hint: 
+            drag_hint: Drag pages into the preview to create links.
           text_area_input:
-            bold: 
-            cancel: 
-            create_link: 
-            italic: 
-            ok: 
-            underline: 
-            url: 
+            bold: Bold
+            cancel: Cancel
+            create_link: Insert link
+            italic: Italic
+            ok: Ok
+            underline: Underline
+            url: URL
       views:
         inputs:
           file_input_view:
-            none: 
+            none: (none)
           proxy_url_input_view:
-            http_error: 
-            url_validation: 
+            http_error: The given URL could not be fetched. (The server answered with a HTTP status code ' %{status}')
+            url_validation: Checking URL...
           select_input_view:
-            none: 
-            placeholder: 
+            none: (none)
+            placeholder: Default (%{text})
           text_input_view:
-            required_field: 
+            required_field: Required field
           url_input_view:
-            required_field: 
-            supported_vendors: 
-            url_hint: 
-    unauthorized: 
+            required_field: Required field
+            supported_vendors: ! 'Following providers are supported:'
+            url_hint: ! 'URL must start with http:// '
+    unauthorized: You are not authorized to view this page.
     user_mailer:
       invitation:
-        ending: 
-        greeting: 
-        instruction: 
-        salutation: 
+        ending: Thank you and have fun,
+        greeting: Your Pageflow Team
+        instruction: ! 'Welcome to Pageflow. Please use the following link to set your personal password. You may your email address to sign-in. '
+        salutation: Hello %{first_name}
     widgets:
-      none: 
+      none: (none)
       roles:
-        analytics: 
-        mobile_navigation: 
-        navigation: 
+        analytics: Tracking
+        mobile_navigation: Mobile navigation
+        navigation: Navigation bar
       type_names:
-        default_mobile_navigation: 
-        default_navigation: 
+        default_mobile_navigation: Navigation bar with thumbnails
+        default_navigation: Navigation bar with thumbnails
   support:
     array:
       last_word_connector: ! ', and '
@@ -1070,15 +1072,15 @@ en:
   time:
     am: am
     formats:
-      date: 
+      date: ! '%Y-%m-%d'
       default: ! '%a, %d %b %Y %H:%M:%S %z'
       long: ! '%B %d, %Y %H:%M'
       short: ! '%d %b %H:%M'
     pm: pm
   views:
     pagination:
-      first: 
-      last: 
-      next: 
-      previous: 
-      truncate: 
+      first: ! '|<'
+      last: ! '>|'
+      next: ! '>>'
+      previous: <<
+      truncate: ! '...'
