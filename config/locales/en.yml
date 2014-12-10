@@ -176,6 +176,7 @@ en:
         title: Title
         updated_at: Updated at
         url: Permalink
+        locale: Language
       pageflow/folder:
         account: Account
         name: Name
@@ -251,6 +252,7 @@ en:
         sign_in_count: ! '# of sign ins'
         suspended?: Suspended
         unconfirmed_email: Unconfirmed Email
+        locale: Language
     errors:
       messages:
         accepted: has to be accepted
@@ -741,6 +743,7 @@ en:
           delete_account_hint: You don't want to continue using Pageflow?
           deleted: Your account has been deleted. You may sign-up for a new one at any time!
           updated: Your profile has been updated.
+        account: Profile
     audio:
       open: Play audio
     devise:
@@ -922,6 +925,15 @@ en:
           show_editor: Show editor panel
         entry_preview_view:
           scroll_hint: Scroll down to continue
+        chapter_item_view:
+          unnamed: (New chapter)
+          chapter: Chapter
+        page_item_view:
+          unnamed: (New page)
+        files_view:
+          add: Add
+          upload: Upload
+          reuse: Reuse
     entries:
       entry:
         print_logo: Logo
@@ -975,6 +987,7 @@ en:
           overview: Overview
           scroll_left: Scroll left
           scroll_right: Scroll right
+          close: Close
       skip_links:
         goto_content: Goto content
         goto_navigation: Goto navigation
@@ -1063,7 +1076,7 @@ en:
       invitation:
         ending: Thank you and have fun,
         greeting: Your Pageflow Team
-        instruction: ! 'Welcome to Pageflow. Please use the following link to set your personal password. You may your email address to sign-in. '
+        instruction: ! 'Welcome to Pageflow. Please use the following link to set your personal password. You may use your email address to sign-in. '
         salutation: Hello %{first_name}
     widgets:
       none: (none)
@@ -1094,3 +1107,4 @@ en:
       next: ! '>>'
       previous: <<
       truncate: ! '...'
+  language: English

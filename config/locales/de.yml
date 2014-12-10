@@ -176,6 +176,7 @@ de:
         title: Titel
         updated_at: Geändert am
         url: Permalink
+        locale: Sprache
       pageflow/folder:
         account: Konto
         name: Name
@@ -251,6 +252,7 @@ de:
         sign_in_count: ! '# Anmeldungen'
         suspended?: Gesperrt
         unconfirmed_email: Noch nicht bestätigte E-Mail-Adresse
+        locale: Sprache
     errors:
       messages:
         accepted: muss akzeptiert werden
@@ -741,6 +743,7 @@ de:
           delete_account_hint: Du möchtest die Anwendung nicht mehr nutzen?
           deleted: Dein Benutzerkonto wurde gelöscht.
           updated: Dein Profil wurde aktualisiert.
+        account: Profil
     audio:
       open: Audio anhören
     devise:
@@ -920,11 +923,20 @@ de:
           show_editor: Editorleiste einblenden
         entry_preview_view:
           scroll_hint: Scrollen, um weiterzulesen
+        chapter_item_view:
+          unnamed: (Unbenannt)
+          chapter: Kapitel
+        page_item_view:
+          unnamed: (Unbenannt)
+        files_view:
+          add: Hinzufügen
+          upload: Hochladen
+          reuse: Wiederverwenden
     entries:
       entry:
         print_logo: Logo
         scroll_indicator: Scrollen, um weiterzulesen
-        swipe_indicator: Wischen, um Text wieder einzublenden
+        swipe_indicator: Wischen, um Text einzublenden
       ie8_hint:
         close: Hinweis schließen
         deprecated_browser: <p>Liebe Nutzer,</p><p>leider nutzen Sie eine veraltete Version Ihres Browsers. Deshalb können die an dieser Stelle vorgesehenen Inhalte nicht korrekt dargestellt werden. Bitte aktualisieren Sie auf eine aktuelle Version. Unter <a href="http://www.browserchoice.eu/">http://www.browserchoice.eu/</a> stehen alternative Browser zur Verfügung.  Für eine Installation benötigen Sie gegebenenfalls Administrator-Rechte. </p>
@@ -973,6 +985,7 @@ de:
           overview: Übersicht
           scroll_left: Nach links scrollen
           scroll_right: Nach rechts scrollen
+          close: Schliessen
       skip_links:
         goto_content: Zum Inhalt
         goto_navigation: Zur Seitennavigation
@@ -1092,3 +1105,4 @@ de:
       next: ! '>>'
       previous: <<
       truncate: ! '...'
+  language: Deutsch
