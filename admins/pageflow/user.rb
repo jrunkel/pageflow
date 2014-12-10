@@ -50,6 +50,13 @@ module Pageflow
             row :created_at
             row :last_sign_in_at
             boolean_status_tag_row :suspended?
+            row :locale do
+              unless user.locale.blank?
+                I18n.t('language', locale: user.locale)
+              else
+                I18n.t('active_admin.empty')
+              end
+            end
           end
 
           para do
@@ -106,7 +113,7 @@ module Pageflow
 
     form(:partial => 'form')
 
-    collection_action 'me', :title => 'Profil', :method => [:get, :patch] do
+    collection_action 'me', :title => I18n.t('pageflow.admin.users.account'), :method => [:get, :patch] do
       if request.patch?
         if current_user.update_with_password(user_profile_params)
           sign_in current_user, :bypass => true
@@ -115,7 +122,7 @@ module Pageflow
       end
     end
 
-    collection_action 'delete_me', :title => 'Konto entfernen', :method => [:get, :delete] do
+    collection_action 'delete_me', :title => I18n.t('pageflow.admin.users.account'), :method => [:get, :delete] do
       if request.delete?
         if current_user.destroy_with_password(params.require(:user)[:current_password])
           redirect_to admin_root_path, :notice => I18n.t('pageflow.admin.users.me.updated')
@@ -156,11 +163,11 @@ module Pageflow
       end
 
       def user_profile_params
-        params.require(:user).permit(:first_name, :last_name, :current_password, :password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :current_password, :password, :password_confirmation, :locale)
       end
 
       def permitted_params
-        result = params.permit(:user => [:first_name, :last_name, :email, :password, :password_confirmation, :account_id, :role])
+        result = params.permit(:user => [:first_name, :last_name, :email, :password, :password_confirmation, :account_id, :role, :locale])
         restrict_attributes(params[:id], result[:user]) if result[:user]
         result
       end

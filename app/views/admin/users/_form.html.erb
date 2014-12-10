@@ -10,6 +10,7 @@
       <%= f.input :email, :hint => f.object.new_record? && I18n.t('pageflow.admin.users.email_invitation_hint') %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
+      <%= f.input :locale, as: :select, collection: I18n.available_locales.map{|locale| [I18n.t('language', locale: locale), locale.to_s]} %>
       <% if authorized?(:read, Pageflow::Account) %>
         <%= f.input :account, :include_blank => false %>
       <% end %>
