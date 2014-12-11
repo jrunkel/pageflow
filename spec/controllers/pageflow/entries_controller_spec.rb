@@ -166,6 +166,14 @@ module Pageflow
           expect(response.status).to eq(404)
         end
 
+        it 'uses locale of entry' do
+          entry = create(:entry, :published, published_revision_attributes: {locale: 'de'})
+
+          get(:show, id: entry)
+
+          expect(response.body).to have_selector('html[lang=de]')
+        end
+
         it 'renders widgets for entry' do
           Pageflow.config.widget_types.register(TestWidgetType.new(:name => 'test_widget',
                                                                    :rendered => '<div class="test_widget"></div>'))
@@ -320,6 +328,22 @@ module Pageflow
         get(:partials, :id => entry)
 
         expect(response).to redirect_to(main_app.new_user_session_path)
+      end
+
+      it 'uses locale of entry' do
+        Pageflow.config.widget_types.register(TestWidgetType.new(name: 'test_widget',
+                                                                 enable_in_editor: true,
+                                                                 rendered: lambda { "<div lang=' }))
+        user = create(:user)
+        entry = create(:entry,
+                       :published,
+                       with_member: user,
+                       published_revision_attributes: {locale: 'de'})
+
+        sign_in(user)
+        get(:partials, id: entry)
+
+        expect(response.body).to have_selector('html[lang=de]')
       end
 
       it 'renders editor enabled widgets for entry' do

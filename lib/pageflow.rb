@@ -62,7 +62,7 @@ module Pageflow
 
   def self.active_admin_settings(config)
     config.before_filter do
-      I18n.locale = current_user.try(:locale).presence || I18n.default_locale
+      I18n.locale = current_user.try(:locale) || I18n.default_locale
     end
   end
 end
