@@ -168,15 +168,18 @@ en:
         account: Account
         created_at: Created at
         credits: Credits
+        emphasize_chapter_beginning: Emphasize chapter beginning
+        emphasize_new_pages: Emphasize new pages
         home_button_enabled: Show 'Home' button
         home_url: ! '''Home'' Button URL'
+        locale: Language
         manual_start: Show Instruction-Overlay
         published?: Publication state
+        share_image_id: Social Sharing Image
         summary: Summary
         title: Title
         updated_at: Updated at
         url: Permalink
-        locale: Language
       pageflow/folder:
         account: Account
         name: Name
@@ -245,6 +248,7 @@ en:
         full_name: Full name
         last_name: Last name
         last_sign_in_at: Last signed in at
+        locale: Language
         membership: Membership
         password: Password
         password_confirmation: Password confirmation
@@ -252,7 +256,6 @@ en:
         sign_in_count: ! '# of sign ins'
         suspended?: Suspended
         unconfirmed_email: Unconfirmed Email
-        locale: Language
     errors:
       messages:
         accepted: has to be accepted
@@ -513,7 +516,7 @@ en:
       admin_user:
         signed_in: Successfully signed in as administrator.
       new:
-        sign_in_with_facebook: Sing in with Facebook
+        sign_in_with_facebook: Sign in with Facebook
         sign_in_with_google: Sign in with Google
       signed_in: Signed in successfully.
       signed_out: Signed out successfully.
@@ -599,6 +602,7 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+  language: English
   number:
     currency:
       format:
@@ -710,15 +714,26 @@ en:
         remove_logo: Remove logo
         show: View
       users:
+        account: Profile
         add: Add user
         add_entry: Add story
         confirm_delete: Delete this user? This action cannot be undone.
         delete: Delete
+        delete_me:
+          cancel_label: No, do not delete my account!
+          delete_label: Delete account
+          warning_html: Please enter your current password to confirm deletion of your account. <b>All data will be deleted. This action cannot be undone.</b>
         deleted: This user was deleted.
         edit: Edit
         email_invitation_hint: The user will be invited to choose a password.
         empty: ! 'This user has no associated stories. '
         invite_user: Invite user
+        me:
+          change_password_hint: Leave blank to keep your current password.
+          delete_account: Delete account
+          delete_account_hint: You don't want to continue using Pageflow?
+          deleted: Your account has been deleted. You may sign-up for a new one at any time!
+          updated: Your profile has been updated.
         none: There are no stories.
         resend_invitation: Resend invitation email
         resent_invitation: The invitation email has been resent.
@@ -733,17 +748,6 @@ en:
         suspended: ! 'The user was suspended and will not be able to sign-in again. '
         unsuspend: Unsuspend
         unsuspended: The user was unsuspended.
-        delete_me:
-          cancel_label: No, do not delete my account!
-          delete_label: Delete account
-          warning_html: Please enter your current password to confirm deletion of your account. <b>All data will be deleted. This action cannot be undone.</b>
-        me:
-          change_password_hint: Leave blank to keep your current password.
-          delete_account: Delete account
-          delete_account_hint: You don't want to continue using Pageflow?
-          deleted: Your account has been deleted. You may sign-up for a new one at any time!
-          updated: Your profile has been updated.
-        account: Profile
     audio:
       open: Play audio
     devise:
@@ -812,12 +816,21 @@ en:
           audio_files: Audios
           image_files: Images
           video_files: Videos
-      screens:
-        ratio16to9: '16:9'
-        ratio4to3: '4:3'
       templates:
         back_button_decorator:
           outline: Outline
+        background_positioning:
+          cancel: Cancel
+          help: Configure which part of the image shall remain visibile when cropping.
+          preview_title: Preview
+          previews:
+            banner: Banner
+            ratio16to9: 16:9 Landscape
+            ratio16to9Portrait: 16:9 Portrait
+            ratio4to3: 4:3 Landscape
+            ratio4to3Portrait: 4:3 Portrait
+          save: Save
+          title: Adjust position
         chapter_item:
           new_page: New page
           save_error: Errors were detected while saving this chapter.
@@ -878,11 +891,6 @@ en:
           no_files: This story does not contain any files of this type.
         help_button:
           open_help: Open help
-        image_positioning:
-          adjust_positioning: Adjust positioning
-          aspect_ratio: Aspect ratio
-          cancel: Cancel
-          save: Save
         loading:
           loading: Loading...
         locked:
@@ -918,6 +926,9 @@ en:
         select_button:
           select: Select
       views:
+        chapter_item_view:
+          chapter: Chapter
+          unnamed: (New chapter)
         editor_views:
           files_pending_warning: You are currently uploading files. All uploads will be canceled if you leave this page.
           hide_editor: Hide editor panel
@@ -925,15 +936,12 @@ en:
           show_editor: Show editor panel
         entry_preview_view:
           scroll_hint: Scroll down to continue
-        chapter_item_view:
-          unnamed: (New chapter)
-          chapter: Chapter
-        page_item_view:
-          unnamed: (New page)
         files_view:
           add: Add
-          upload: Upload
           reuse: Reuse
+          upload: Upload
+        page_item_view:
+          unnamed: (New page)
     entries:
       entry:
         print_logo: Logo
@@ -945,8 +953,6 @@ en:
       mobile_navigation:
         imprint: Imprint
         overview: Overview
-        share_with_facebook: Share on Facebook
-        share_with_google: Share on Google+
         share_with_twitter: Tweet
       multimedia_alert:
         alert: Alert
@@ -974,7 +980,6 @@ en:
           scroll_up: Scroll up
           share: Share
           share_with_facebook: Share on Facebook
-          share_with_google: Share on Google+
           share_with_twitter: Tweet
         home_button:
           show_home: Start
@@ -984,10 +989,10 @@ en:
         chapter:
           chapter: Chapter
         entry:
+          close: Close
           overview: Overview
           scroll_left: Scroll left
           scroll_right: Scroll right
-          close: Close
       skip_links:
         goto_content: Goto content
         goto_navigation: Goto navigation
@@ -1018,12 +1023,15 @@ en:
           general: General
           links: Links
           options: Options
+          social: Social
           widgets: Apperance
       inline_help:
         pageflow/chapter:
           title: Will be shown on the overview page.
         pageflow/entry:
           credits: Will be shown in the info box.
+          emphasize_chapter_beginning: The first page of each chapter is emphasized.
+          emphasize_new_pages: Pages which have been added since the last visit are highlighted.
           home_button_enabled: Show button to your home page.
           home_button_enabled_disabled: This option is not available for your theme.
           home_url: URL of your home page. Leave empty to use your accounts default setting.
@@ -1037,7 +1045,7 @@ en:
           gradient_opacity: Adjust gradient opacity to gain optimal contrast between text and background. Keep in mind that the position of elements varies with screen sizes.
           invert: Use dark font color and bright gradient.
           mobile_poster_image_id: This image is used as poster image on mobile devices.
-          text: ! 'Recommended text length: 220 Chars'
+          text: This is the main text of the page.
           thumbnail_image_id: This image will be used as thumbnail in the navigation bar and for internal links to this page.
       templates:
         inputs:
@@ -1071,6 +1079,7 @@ en:
             required_field: Required field
             supported_vendors: ! 'Following providers are supported:'
             url_hint: ! 'URL must start with http:// '
+            url_hint_https: URL must start with http:// or https://
     unauthorized: You are not authorized to view this page.
     user_mailer:
       invitation:
@@ -1084,6 +1093,12 @@ en:
         analytics: Tracking
         mobile_navigation: Mobile navigation
         navigation: Navigation bar
+      share_menu:
+        current_page: This page
+        entry: This story
+        share_with_facebook: Share on Facebook
+        share_with_google: Share on Google+
+        share_with_twitter: 
       type_names:
         default_mobile_navigation: Navigation bar with thumbnails
         default_navigation: Navigation bar with thumbnails
@@ -1107,4 +1122,3 @@ en:
       next: ! '>>'
       previous: <<
       truncate: ! '...'
-  language: English

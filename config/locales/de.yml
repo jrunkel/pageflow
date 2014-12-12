@@ -168,15 +168,18 @@ de:
         account: Konto
         created_at: Erstellt am
         credits: Credits
+        emphasize_chapter_beginning: Kapitelanfang hervorheben
+        emphasize_new_pages: Neue Seiten hervorheben
         home_button_enabled: Home-Button anzeigen
         home_url: Home-Button URL
+        locale: Sprache
         manual_start: Multimedia Hinweis vor dem Start anzeigen
         published?: Veröffentlichungstatus
+        share_image_id: Social Sharing Bild
         summary: Zusammenfassung
         title: Titel
         updated_at: Geändert am
         url: Permalink
-        locale: Sprache
       pageflow/folder:
         account: Konto
         name: Name
@@ -195,7 +198,7 @@ de:
         background_video_id: Hintergrundvideo
         description: Beschreibung für Übersicht
         display_in_navigation: In Navigationsleiste anzeigen
-        gradient_opacity: Intensität des Farbverlaufs
+        gradient_opacity: Intensität der Abblendung
         hide_title: Titel ausblenden
         invert: Farben invertieren
         linked_page_ids: Seiten verknüpfen
@@ -245,6 +248,7 @@ de:
         full_name: Name
         last_name: Nachname
         last_sign_in_at: Zuletzt angemeldet am
+        locale: Sprache
         membership: Mitgliedschaft
         password: Passwort
         password_confirmation: Passwort wiederholen
@@ -252,7 +256,6 @@ de:
         sign_in_count: ! '# Anmeldungen'
         suspended?: Gesperrt
         unconfirmed_email: Noch nicht bestätigte E-Mail-Adresse
-        locale: Sprache
     errors:
       messages:
         accepted: muss akzeptiert werden
@@ -599,6 +602,7 @@ de:
       create: ! '%{model} erstellen'
       submit: ! '%{model} speichern'
       update: ! '%{model} aktualisieren'
+  language: Deutsch
   number:
     currency:
       format:
@@ -710,15 +714,26 @@ de:
         remove_logo: Logo entfernen
         show: Anzeigen
       users:
+        account: Profil
         add: Benutzer hinzufügen
         add_entry: Beitrag hinzufügen
         confirm_delete: Soll der Benutzer wirklich gelöscht werden. Alle persönlichen Daten des Benutzers gehen verloren. Dieser Vorgang kann nicht rückgangig gemacht werden.
         delete: Löschen
+        delete_me:
+          cancel_label: Nein, mein Benutzerkonto nicht löschen
+          delete_label: Benutzerkonto löschen
+          warning_html: Gib Dein aktuelles Passwort ein, um zu bestätigen, dass Du Dein Benutzerkonto wirklich löschen möchtest. <b>Alle Deine Daten gehen dabei verloren. Der Vorgang kann nicht rückgangig gemacht werden.</b>
         deleted: Der Benutzer wurde gelöscht.
         edit: Bearbeiten
         email_invitation_hint: Dem Benutzer wird eine E-Mail mit Anweisungen zum Festelegen eines Passworts gesendet.
         empty: Keine Beiträge assoziiert. Fügen Sie dem ausgewählten Benutzer Beiträge hinzu.
         invite_user: Benutzer einladen
+        me:
+          change_password_hint: Freilassen um bisheriges Passwort beizubehalten.
+          delete_account: Benutzerkonto löschen
+          delete_account_hint: Du möchtest die Anwendung nicht mehr nutzen?
+          deleted: Dein Benutzerkonto wurde gelöscht.
+          updated: Dein Profil wurde aktualisiert.
         none: Sie haben keine Beiträge.
         resend_invitation: Einladung erneut verschicken
         resent_invitation: Der Benutzer wurde erneut per E-Mail eingeladen.
@@ -733,17 +748,6 @@ de:
         suspended: Der Benutzer wurde gesperrt. Er kann sich nun nicht mehr anmelden.
         unsuspend: Entsperren
         unsuspended: Der Benutzer wurde entsperrt. Er kann sich nun wieder anmelden.
-        delete_me:
-          cancel_label: Nein, mein Benutzerkonto nicht löschen
-          delete_label: Benutzerkonto löschen
-          warning_html: Gib Dein aktuelles Passwort ein, um zu bestätigen, dass Du Dein Benutzerkonto wirklich löschen möchtest. <b>Alle Deine Daten gehen dabei verloren. Der Vorgang kann nicht rückgangig gemacht werden.</b>
-        me:
-          change_password_hint: Freilassen um bisheriges Passwort beizubehalten.
-          delete_account: Benutzerkonto löschen
-          delete_account_hint: Du möchtest die Anwendung nicht mehr nutzen?
-          deleted: Dein Benutzerkonto wurde gelöscht.
-          updated: Dein Profil wurde aktualisiert.
-        account: Profil
     audio:
       open: Audio anhören
     devise:
@@ -810,12 +814,21 @@ de:
           audio_files: Audios
           image_files: Bilder
           video_files: Videos
-      screens:
-        ratio16to9: '16:9'
-        ratio4to3: '4:3'
       templates:
         back_button_decorator:
           outline: Gliederung
+        background_positioning:
+          cancel: Abbrechen
+          help: Stellen Sie ein, welcher Teil des Bildes beim Zuschneiden sichtbar bleiben soll.
+          preview_title: Vorschau
+          previews:
+            banner: 
+            ratio16to9: 
+            ratio16to9Portrait: 
+            ratio4to3: 4:3 Landscape
+            ratio4to3Portrait: 4:3 Portrait
+          save: Speichern
+          title: Bildauschnitt anpassen
         chapter_item:
           new_page: Neue Seite
           save_error: Beim Speichern des Kapitels ist ein Fehler aufgetreten.
@@ -876,11 +889,6 @@ de:
           no_files: In diesem Beitrag gibt es keine Dateien dieses Typs.
         help_button:
           open_help: Hilfe anzeigen
-        image_positioning:
-          adjust_positioning: Bildauschnitt anpassen
-          aspect_ratio: Seitenverhältnis
-          cancel: Abbrechen
-          save: Speichern
         loading:
           loading: Daten werden geladen.
         locked:
@@ -916,6 +924,9 @@ de:
         select_button:
           select: Auswählen
       views:
+        chapter_item_view:
+          chapter: Kapitel
+          unnamed: (Unbenannt)
         editor_views:
           files_pending_warning: Es werden noch Dateien hochgeladen. Wenn Sie die Seite verlassen werden die Uploads abgebrochen.
           hide_editor: Editorleiste ausblenden
@@ -923,15 +934,12 @@ de:
           show_editor: Editorleiste einblenden
         entry_preview_view:
           scroll_hint: Scrollen, um weiterzulesen
-        chapter_item_view:
-          unnamed: (Unbenannt)
-          chapter: Kapitel
-        page_item_view:
-          unnamed: (Unbenannt)
         files_view:
           add: Hinzufügen
-          upload: Hochladen
           reuse: Wiederverwenden
+          upload: Hochladen
+        page_item_view:
+          unnamed: (Unbenannt)
     entries:
       entry:
         print_logo: Logo
@@ -943,8 +951,6 @@ de:
       mobile_navigation:
         imprint: Impressum
         overview: Übersicht
-        share_with_facebook: Auf Facebook teilen
-        share_with_google: Auf Google+ teilen
         share_with_twitter: Twittern
       multimedia_alert:
         alert: Hinweis
@@ -972,7 +978,6 @@ de:
           scroll_up: Hoch scrollen
           share: Teilen
           share_with_facebook: Auf Facebook teilen
-          share_with_google: Auf Google+ teilen
           share_with_twitter: Twittern
         home_button:
           show_home: Zur Startseite
@@ -982,10 +987,10 @@ de:
         chapter:
           chapter: Kapitel
         entry:
+          close: Schliessen
           overview: Übersicht
           scroll_left: Nach links scrollen
           scroll_right: Nach rechts scrollen
-          close: Schliessen
       skip_links:
         goto_content: Zum Inhalt
         goto_navigation: Zur Seitennavigation
@@ -1016,12 +1021,15 @@ de:
           general: Allgemein
           links: Verweise
           options: Optionen
+          social: Social
           widgets: Erscheinungsbild
       inline_help:
         pageflow/chapter:
           title: Wird auf der Übersichtsseite angezeigt.
         pageflow/entry:
           credits: Text wird zusammen mit dem Impressumsverweis angezeigt.
+          emphasize_chapter_beginning: Die erste Seite eines jeden Kapitels wird hervorgehoben.
+          emphasize_new_pages: Seit dem letzten Besuch neu hinzugefügte Seiten werden besonders gekennzeichnet.
           home_button_enabled: Link zu einer Übersichtsseite anzeigen.
           home_button_enabled_disabled: Diese Funktion steht in diesem Theme nicht zur Verfügung.
           home_url: URL der Übersichtseite. Leer lassen, um Standard zu übernehmen.
@@ -1035,7 +1043,7 @@ de:
           gradient_opacity: Wählen Sie die Intensität des Farbverlaufs so, dass ein ausreichender Kontrast zwischen Text und Hintegrund gewährleistet ist.
           invert: Dunkle Schrift und helle Schattierung anzeigen.
           mobile_poster_image_id: Dieses Bild wird in der Mobilvariante der Seite als Posterbild gezeigt.
-          text: ! 'Empfohlene Textlänge: 220 Zeichen'
+          text: Dies ist der Textbereich der Seite.
           thumbnail_image_id: Dieses Bild wird in der Navigationsleiste und anderen Verweisen auf die Seite gezeigt.
       templates:
         inputs:
@@ -1069,6 +1077,7 @@ de:
             required_field: Muss ausgefüllt werden
             supported_vendors: ! 'Es werden nur die folgenden Anbieter unterstützt:'
             url_hint: URL muss mit http:// beginnen.
+            url_hint_https: URL muss mit http:// oder https:// beginnen.
     unauthorized: Sie sind nicht berechtigt diese Seite anzuzeigen.
     user_mailer:
       invitation:
@@ -1082,6 +1091,12 @@ de:
         analytics: Zählpixel
         mobile_navigation: Mobile Navigation
         navigation: Navigationsleiste
+      share_menu:
+        current_page: Diese Seite
+        entry: Diesen Beitrag
+        share_with_facebook: 
+        share_with_google: Auf Google+ teilen
+        share_with_twitter: 
       type_names:
         default_mobile_navigation: Navigationsmenü mit Thumbnails
         default_navigation: Navigationsleiste mit Thumbnails
@@ -1105,4 +1120,3 @@ de:
       next: ! '>>'
       previous: <<
       truncate: ! '...'
-  language: Deutsch
